@@ -1,0 +1,22 @@
+{
+  "thumb-gdt100max-estudio.webp": {
+    "origem": "/mnt/project-files/catalogo-virtual/fotos-recortadas-hd/gdt100-max/GDT100MAX_lateral_estudio.jpg",
+    "fonte_original": "/mnt/project-files/catalogo-virtual/fotos-originais/gdt100/GDT100-R LOGO BLCKNGREEN 001.png",
+    "item": "1",
+    "modelo": "gdt100-max",
+    "nota": "GDT100-R = GDT100 MAX (Anderson, 12/10/2026); foto do modelo, não da unidade"
+  },
+  "thumb-gd3030s-estudio.webp": {
+    "origem": "/mnt/project-files/equipe-marketing/social/vendas/promo-2026-10-25/gd3030s/fotos/s3_logo_oficial.png",
+    "fundo": "/mnt/project-files/catalogo-virtual/fundo-novo-fotos-logo.png",
+    "montagem": "gdt50/fotos/resultado/compose.py (compor, sem mexer nos pixels da máquina)",
+    "item": "2",
+    "modelo": "gd3030s",
+    "nota": "Anderson confirmou em 29/10/2026 que é a GD3030S atual"
+  },
+  "thumb-gdf2020-estudio.webp": {
+    "origem": "/mnt/project-files/catalogo-virtual/fotos-recortadas-hd/gdf2020/GDF2020_3-4_estudio.jpg",
+    "item": "2",
+    "modelo": "gdf2020"
+  }
+}
