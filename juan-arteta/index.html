@@ -127,7 +127,14 @@ html:not(.js) .lockup{opacity:1}
 .sumcard li .v{font-weight:600;white-space:nowrap}
 .sumcard .tot{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:16px 18px;background:var(--accent-surface)}
 .sumcard .tot span{font-size:14px;color:var(--ink-2)}
-.sumcard .tot b{font-size:24px;letter-spacing:-.02em;color:var(--accent)}
+.sumcard .tot b{font-size:22px;white-space:nowrap;letter-spacing:-.02em;color:var(--accent)}
+.sumcard li.pick{grid-template-columns:28px minmax(0,1fr) auto;cursor:pointer;transition:background .2s}
+.sumcard li.pick small{grid-column:2/-1}
+.sumcard li.pick input{appearance:none;-webkit-appearance:none;width:22px;height:22px;margin:1px 0 0;border:2px solid #5a5a5a;border-radius:6px;background:transparent;cursor:pointer;display:grid;place-items:center}
+.sumcard li.pick input:checked{background:var(--accent);border-color:var(--accent)}
+.sumcard li.pick input:checked::after{content:"";width:6px;height:11px;border:solid #0b0b0b;border-width:0 2.5px 2.5px 0;transform:translateY(-1px) rotate(45deg)}
+.sumcard li.pick.on{background:rgba(243,185,20,.07)}
+.sumcard .pick-hint{padding:12px 18px 0;font-size:13.5px;color:var(--ink-2)}
 .sumcard .obs{padding:12px 18px 16px;font-size:13.5px;color:var(--ink-3)}
 
 /* ---------- seções ---------- */
@@ -378,7 +385,7 @@ footer a{text-decoration:underline;text-underline-offset:3px}
     <div class="wrap hero-grid">
       <div>
         <h2 class="hero-t" data-r>Lavar más material y atrapar el oro <span class="dim">sin mercurio y sin químicos.</span></h2>
-        <p class="lede" data-r style="--i:1">Juan, aquí está la propuesta del trommel GDT100 MAX que usted pidió, con un precio especial, y también la opción <strong>GDT100 MAX XL, reforzada y con tolva más grande.</strong> Usted elige una de las dos.</p>
+        <p class="lede" data-r style="--i:1">Juan, aquí está la propuesta del trommel GDT100 MAX que usted pidió, con un precio especial, y también la opción <strong>GDT100 MAX XL, reforzada y con tolva más grande.</strong> Puede elegir uno o los dos.</p>
         <dl class="meta" data-r style="--i:2">
           <div><dt>Opción 1 · GDT100 MAX</dt><dd class="num">US$ 10.250</dd></div>
           <div><dt>Opción 2 · GDT100 MAX XL</dt><dd class="num">US$ 14.400</dd></div>
@@ -393,11 +400,12 @@ footer a{text-decoration:underline;text-underline-offset:3px}
       </div>
       <div class="sumcard" data-r style="--i:2">
         <h3>Resumen de la propuesta</h3>
-        <ul>
-          <li><b>Opción 1 · Trommel GDT100 MAX, nuevo</b><span class="v num">US$ 10.250</span><small>Hasta 7 t/h, según el material. Motor de fábrica de 6,5 HP y tolva estándar. Precio de lista US$ 12.430. Plazo: 60 días.</small></li>
-          <li><b>Opción 2 · GDT100 MAX XL (reforzado), nunca usado</b><span class="v num">US$ 14.400</span><small>Tolva más grande: 10 a 12 t/h con draga de 4". Motor de 13 HP. Revisión y pintura nueva antes de la entrega. Plazo: 3 semanas.</small></li>
+        <p class="pick-hint">Marque lo que usted quiere. Puede elegir uno o los dos.</p>
+        <ul id="picks">
+          <li class="pick"><input type="checkbox" data-nome="GDT100 MAX" data-preco="10250" aria-label="Elegir opción 1, GDT100 MAX"><b>Opción 1 · Trommel GDT100 MAX, nuevo</b><span class="v num">US$ 10.250</span><small>Hasta 7 t/h, según el material. Motor de fábrica de 6,5 HP y tolva estándar. Precio de lista US$ 12.430. Plazo: 60 días.</small></li>
+          <li class="pick"><input type="checkbox" data-nome="GDT100 MAX XL" data-preco="14400" aria-label="Elegir opción 2, GDT100 MAX XL"><b>Opción 2 · GDT100 MAX XL (reforzado), nunca usado</b><span class="v num">US$ 14.400</span><small>Tolva más grande: 10 a 12 t/h con draga de 4". Motor de 13 HP. Revisión y pintura nueva antes de la entrega. Plazo: 3 semanas.</small></li>
         </ul>
-        <div class="tot"><span>Usted elige una opción (más flete)</span></div>
+        <div class="tot"><span id="sel-lbl">Marque una o las dos opciones (más flete)</span><b class="num" id="sel-tot"></b></div>
         <p class="obs">Pago en dólares a GoldDog Industries USA LLC (banco Chase).</p>
         <p class="obs"><b>Válida por 3 días hábiles a partir del envío.</b></p>
       </div>
@@ -521,7 +529,7 @@ footer a{text-decoration:underline;text-underline-offset:3px}
             <li><span>Opción 1 · GDT100 MAX (precio de lista <s>US$ 12.430</s>)</span><span class="num">US$ 10.250</span></li>
             <li><span>Opción 2 · GDT100 MAX XL</span><span class="num">US$ 14.400</span></li>
           </ul>
-          <p class="once">Usted elige una de las dos opciones. <b>El flete no está incluido:</b> lo cotizamos hasta su ubicación en Paraguay, si usted quiere.</p>
+          <p class="once">Puede elegir uno o los dos. <b>El flete no está incluido:</b> lo cotizamos hasta su ubicación en Paraguay, si usted quiere.</p>
         </div>
         <div class="cond">
           <h3>Condiciones</h3>
@@ -560,7 +568,7 @@ footer a{text-decoration:underline;text-underline-offset:3px}
     <div class="wrap">
       <div class="cta" data-r>
         <h2>Próximo paso</h2>
-        <p class="sub">Para aprobar, escríbame por WhatsApp. Le envío los datos de la transferencia y cotizamos el flete hasta su ubicación en Paraguay.</p>
+        <p class="sub">Marque en el resumen lo que usted quiere y toque en aprobar: el mensaje ya va con su elección. Le envío los datos de la transferencia y cotizamos el flete hasta su ubicación en Paraguay.</p>
         <div class="cta-row">
           <a class="btn btn-primary" id="cta-wa" href="https://wa.me/5519997236122?text=PROPOSTA-JUAN-ARTETA" target="_blank" rel="noopener"><svg><use href="#i-whats"/></svg>Aprobar por WhatsApp</a>
           <a class="btn btn-ghost" id="cta-duvida" href="https://wa.me/5519997236122?text=PROPOSTA-JUAN-ARTETA" target="_blank" rel="noopener">Hacer una pregunta</a>
@@ -603,9 +611,22 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* aprovação pelo WhatsApp: o código vem primeiro na mensagem */
-  const msg = `${CFG.codigo} Hola, quiero aprobar la propuesta GDS-2026-1110-02 (${CFG.cliente}): opción (GDT100 MAX o GDT100 MAX XL): `;
   const wa = $('#cta-wa');
-  if (wa && /^\d{12,13}$/.test(CFG.whatsapp)) wa.href = `https://wa.me/${CFG.whatsapp}?text=${encodeURIComponent(msg)}`;
+  const usd = n => 'US$ ' + n.toLocaleString('es-PY');
+  /* el cliente marca los equipos que quiere: total de lo elegido y mensaje de WhatsApp con la lista */
+  let msg = '';
+  function sel() {
+    const on = $$('#picks input').filter(i => i.checked);
+    $$('#picks li').forEach(li => li.classList.toggle('on', $('input', li).checked));
+    const tot = on.reduce((t, i) => t + +i.dataset.preco, 0);
+    $('#sel-lbl').textContent = on.length ? 'Total de lo que eligió (más flete)' : 'Marque una o las dos opciones (más flete)';
+    $('#sel-tot').textContent = on.length ? usd(tot) : '';
+    const itens = on.length ? on.map(i => `${i.dataset.nome} (${usd(+i.dataset.preco)})`).join(' + ') + ` = ${usd(tot)} más flete.` : '(todavía no elegí: GDT100 MAX y/o GDT100 MAX XL)';
+    msg = `${CFG.codigo} Hola, quiero aprobar la propuesta GDS-2026-1110-02 (${CFG.cliente}). Elegí: ${itens}`;
+    if (wa && /^\d{12,13}$/.test(CFG.whatsapp)) wa.href = `https://wa.me/${CFG.whatsapp}?text=${encodeURIComponent(msg)}`;
+  }
+  $$('#picks li').forEach(li => li.addEventListener('click', e => { if (e.target.tagName !== 'INPUT') { const i = $('input', li); i.checked = !i.checked; } sel(); }));
+  sel();
   const duv = $('#cta-duvida');
   if (duv && /^\d{12,13}$/.test(CFG.whatsapp)) duv.href = `https://wa.me/${CFG.whatsapp}?text=${encodeURIComponent(`${CFG.codigo} Hola, Anderson. Tengo una pregunta sobre la propuesta (${CFG.cliente}).`)}`;
   const mail = $('#cta-mail');
