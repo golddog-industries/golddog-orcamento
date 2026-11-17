@@ -12,7 +12,7 @@
 <!--
   Página de cadastro da Black GoldDog · Fase 1 (cadastro 19 a 25/11, desconto só no dia 26/11).
   Anita (Marketing), 17/11/2026. Envia para o fluxo n8n "BF2026 - Cadastro Black Friday" (RhWxanzsh5E6J1Ii).
-  Não fala o tamanho do desconto nem mostra produto: de 19 a 25/11 só a dor; a solução só aparece em 26/11 (Sr. Anderson, 17/11 16:06Z). Foto da dor: PENDENTE (real, aprovada pelo Sr. Anderson).
+  Não fala o tamanho do desconto nem mostra produto: de 19 a 25/11 só a dor; a solução só aparece em 26/11 (Sr. Anderson, 17/11 16:06Z). Vídeo/foto da dor: PENDENTE (real, aprovado pelo Sr. Anderson; arquivo dor.mp4 nesta pasta). Movimento: pó de ouro descendo, contagem até 26/11, entrada animada (Sr. Anderson 17/11: nada estático).
   Configuração: as 3 linhas no começo do <script>.
 -->
 <style>
@@ -67,9 +67,37 @@ button[disabled]{opacity:.6;cursor:progress}
 .btn2{display:inline-flex;align-items:center;justify-content:center;margin-top:18px;min-height:50px;padding:0 18px;border-radius:12px;background:var(--accent);color:#0b0b0b;font-weight:800;text-decoration:none}
 .fine{color:var(--ink-3);font-size:13px;margin-top:14px}
 footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--ink-3);font-size:13px}
+/* ===== Movimento (Sr. Anderson 17/11: nada estático) ===== */
+.hero{position:relative}
+#ouro{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.85}
+header,main,footer{position:relative;z-index:1}
+h1 span{background:linear-gradient(90deg,#F3B914 0%,#fff3c4 45%,#F3B914 60%,#b8860b 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:brilho 3.2s ease-in-out infinite}
+@keyframes brilho{0%{background-position:100% 0}100%{background-position:-120% 0}}
+.tag{animation:pulso 2.4s ease-in-out infinite}
+@keyframes pulso{0%,100%{box-shadow:0 0 0 0 rgba(243,185,20,.55)}50%{box-shadow:0 0 0 10px rgba(243,185,20,0)}}
+.rev{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rev.in{opacity:1;transform:none}
+.dores li.rev{transform:translateX(-22px)}.dores li.rev.in{transform:none}
+.cont{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
+.cont div{background:var(--s1);border:1px solid var(--line);border-radius:10px;min-width:64px;padding:8px 6px;text-align:center}
+.cont b{display:block;font-size:26px;line-height:1.1;color:var(--accent);font-variant-numeric:tabular-nums}
+.cont small{color:var(--ink-3);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.cont-tit{margin-top:22px;color:var(--ink-3);font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+.midia{margin-top:22px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--s1);position:relative}
+.midia video{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+.midia small{display:block;padding:8px 12px;color:var(--ink-3);font-size:13px}
+#btn{animation:chama 1.8s ease-in-out infinite}
+@keyframes chama{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+.card{transition:box-shadow .3s}.card:focus-within{box-shadow:0 0 0 2px var(--accent),0 0 40px rgba(243,185,20,.18)}
+.fixo{position:fixed;left:0;right:0;bottom:0;z-index:5;padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom));background:rgba(11,11,11,.92);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .35s}
+.fixo.on{transform:none}
+.fixo a{display:flex;align-items:center;justify-content:center;min-height:50px;border-radius:12px;background:var(--accent);color:#0b0b0b;font-weight:800;text-decoration:none}
+@media (min-width:880px){.fixo{display:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rev{opacity:1;transform:none}#ouro{display:none}}
 </style>
 </head>
 <body>
+<canvas id="ouro" aria-hidden="true"></canvas>
 <header><div class="wrap"><div class="logo"><b>GOLD</b>DOG <span style="color:var(--ink-3);font-weight:500;letter-spacing:0">Shop</span></div></div></header>
 <main class="wrap">
   <section class="hero">
@@ -78,12 +106,18 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--ink-3);f
       <h1>Quanto ouro está indo embora <span>no seu rejeito?</span></h1>
       <p class="lead">O garimpeiro sabe quanto pega. Quase ninguém sabe quanto perde. E a perda não aparece na bateia, aparece no fim do mês.</p>
       <ul class="dores">
-        <li>O ouro fino que a água leva e ninguém vê.</li>
-        <li>O material que passa rápido demais porque a calha não dá conta do volume.</li>
-        <li>A despesca que come o dia inteiro e ainda deixa ouro para trás.</li>
-        <li>O dinheiro gasto em máquina que não foi feita para o seu material.</li>
+        <li class="rev">O ouro fino que a água leva e ninguém vê.</li>
+        <li class="rev">O material que passa rápido demais porque a calha não dá conta do volume.</li>
+        <li class="rev">A despesca que come o dia inteiro e ainda deixa ouro para trás.</li>
+        <li class="rev">O dinheiro gasto em máquina que não foi feita para o seu material.</li>
       </ul>
-      <p class="lead"><b>No dia 26/11 a GoldDog mostra o caminho para cada uma dessas dores</b>, com desconto em todos os setores, só nesse dia. Quem está na lista fica sabendo primeiro.</p>
+      <!-- Vídeo real da dor (calha de madeira, rejeito, bateia; nunca a nossa máquina). Aparece sozinho quando o arquivo dor.mp4 aprovado pelo Sr. Anderson for colocado nesta pasta. -->
+      <figure class="midia rev" id="midia" hidden style="margin-left:0;margin-right:0">
+        <video id="vdor" src="dor.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </figure>
+      <p class="cont-tit rev">Faltam para o dia 26/11</p>
+      <div class="cont rev" id="cont" aria-live="off"><div><b id="cd">0</b><small>dias</small></div><div><b id="ch">00</b><small>horas</small></div><div><b id="cm">00</b><small>min</small></div><div><b id="cs">00</b><small>seg</small></div></div>
+      <p class="lead rev"><b>No dia 26/11 a GoldDog mostra o caminho para cada uma dessas dores</b>, com desconto em todos os setores, só nesse dia. Quem está na lista fica sabendo primeiro.</p>
     </div>
 
     <div class="card" id="cadastro">
@@ -131,6 +165,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--ink-3);f
     </div>
   </section>
 </main>
+<div class="fixo" id="fixo"><a href="#cadastro">QUERO ENTRAR NA LISTA DO DIA 26/11</a></div>
 <footer><div class="wrap">GoldDog Shop · CNPJ 67.765.666/0001-01 · <a href="https://www.golddogshop.com.br" style="color:inherit">golddogshop.com.br</a></div></footer>
 <script>
 // ===== Configuração =====
@@ -163,6 +198,53 @@ f.addEventListener('submit', async (e) => {
     btn.disabled = false; btn.textContent = 'QUERO ENTRAR NA LISTA';
   }
 });
+
+// ===== Movimento =====
+(() => {
+  const calmo = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // revelar ao rolar, um depois do outro
+  const els = [...document.querySelectorAll('.rev')];
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 }) : null;
+  els.forEach((el, i) => { el.style.transitionDelay = (Math.min(i, 6) * 120) + 'ms'; io ? io.observe(el) : el.classList.add('in'); });
+  // vídeo da dor: só aparece se o arquivo existir
+  const v = document.getElementById('vdor'), m = document.getElementById('midia');
+  v.addEventListener('loadeddata', () => { m.hidden = false; requestAnimationFrame(() => m.classList.add('in')); });
+  v.addEventListener('error', () => m.remove());
+  // contagem até 26/11 00h de Brasília
+  const alvo = new Date('2026-11-26T00:00:00-03:00').getTime();
+  const p2 = n => String(n).padStart(2, '0');
+  const tick = () => { let t = Math.max(0, alvo - Date.now()) / 1000;
+    document.getElementById('cd').textContent = Math.floor(t / 86400); t %= 86400;
+    document.getElementById('ch').textContent = p2(Math.floor(t / 3600)); t %= 3600;
+    document.getElementById('cm').textContent = p2(Math.floor(t / 60));
+    document.getElementById('cs').textContent = p2(Math.floor(t % 60)); };
+  tick(); setInterval(tick, 1000);
+  // barra fixa no celular quando o formulário sai da tela
+  const fixo = document.getElementById('fixo'), card = document.getElementById('cadastro');
+  if (io) new IntersectionObserver(([e]) => fixo.classList.toggle('on', !e.isIntersecting && e.boundingClientRect.top > 0)).observe(card);
+  // pó de ouro descendo com a água: o ouro que vai embora
+  if (calmo) return;
+  const c = document.getElementById('ouro'), x = c.getContext('2d');
+  let W, H, ps = [];
+  const dpr = Math.min(2, devicePixelRatio || 1);
+  const size = () => { W = c.width = innerWidth * dpr; H = c.height = innerHeight * dpr; };
+  size(); addEventListener('resize', size);
+  const novo = (topo) => ({ x: Math.random() * W, y: topo ? -10 : Math.random() * H, r: (Math.random() * 1.8 + .6) * dpr, vy: (Math.random() * .6 + .25) * dpr, vx: (Math.random() - .5) * .3 * dpr, a: Math.random() * .6 + .25, f: Math.random() * 6.28 });
+  const N = innerWidth < 600 ? 45 : 90;
+  for (let i = 0; i < N; i++) ps.push(novo(false));
+  const loop = () => {
+    x.clearRect(0, 0, W, H);
+    for (const p of ps) {
+      p.y += p.vy; p.x += p.vx + Math.sin(p.f += .02) * .25 * dpr;
+      if (p.y > H + 10) Object.assign(p, novo(true));
+      const g = .55 + .45 * Math.sin(p.f * 3);
+      x.beginPath(); x.arc(p.x, p.y, p.r, 0, 6.283);
+      x.fillStyle = `rgba(243,185,20,${(p.a * g).toFixed(3)})`; x.fill();
+    }
+    requestAnimationFrame(loop);
+  };
+  loop();
+})();
 </script>
 </body>
 </html>
