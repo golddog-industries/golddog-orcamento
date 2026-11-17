@@ -3,17 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Black GoldDog · Lista de cadastro</title>
-<meta name="description" content="Entre na lista da Black GoldDog. Desconto em todos os setores da GoldDog, liberado no dia 26/11.">
+<title>Lista GoldDog · 26/11</title>
+<meta name="description" content="Quanto ouro está indo embora no seu rejeito? No dia 26/11 a GoldDog mostra o caminho, com desconto em todos os setores. Entre na lista.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#0b0b0b">
-<meta property="og:title" content="Black GoldDog · entre na lista">
-<meta property="og:description" content="Desconto em todos os setores da GoldDog, liberado no dia 26/11. Cadastre-se e receba o Guia Rápido grátis.">
-<meta property="og:image" content="foto-campo.jpg">
+<meta property="og:title" content="Quanto ouro está indo embora no seu rejeito?">
+<meta property="og:description" content="Dia 26/11 a GoldDog mostra o caminho para essa dor, com desconto em todos os setores. Entre na lista e receba o Guia Rápido grátis.">
 <!--
   Página de cadastro da Black GoldDog · Fase 1 (cadastro 19 a 25/11, desconto só no dia 26/11).
   Anita (Marketing), 17/11/2026. Envia para o fluxo n8n "BF2026 - Cadastro Black Friday" (RhWxanzsh5E6J1Ii).
-  Não fala o tamanho do desconto (decisão do Sr. Anderson). Foto real (GD3030 em campo, 25/10).
+  Não fala o tamanho do desconto nem mostra produto: de 19 a 25/11 só a dor; a solução só aparece em 26/11 (Sr. Anderson, 17/11 16:06Z). Foto da dor: PENDENTE (real, aprovada pelo Sr. Anderson).
   Configuração: as 3 linhas no começo do <script>.
 -->
 <style>
@@ -38,6 +37,10 @@ h1 span{color:var(--accent)}
 .foto{margin-top:22px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
 .foto img{width:100%;aspect-ratio:995/645;object-fit:cover}
 .foto small{display:block;padding:8px 12px;color:var(--ink-3);font-size:13px;background:var(--s1)}
+.dores{margin:20px 0 6px;padding:0;list-style:none;display:grid;gap:10px}
+.dores li{position:relative;padding-left:26px;color:var(--ink-2)}
+.dores li::before{content:"";position:absolute;left:0;top:.55em;width:12px;height:12px;border-radius:2px;background:var(--warn)}
+.lead b{color:var(--ink)}
 .passos{margin:22px 0 0;padding:0;list-style:none;display:grid;gap:10px}
 .passos li{display:flex;gap:12px;align-items:flex-start;color:var(--ink-2)}
 .passos b{flex:0 0 28px;height:28px;border-radius:50%;background:var(--s2);border:1px solid var(--line);color:var(--accent);display:grid;place-items:center;font-size:14px}
@@ -71,24 +74,22 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--ink-3);f
 <main class="wrap">
   <section class="hero">
     <div>
-      <span class="tag">Black GoldDog · 26/11</span>
-      <h1>Desconto em <span>todos os setores</span> da GoldDog. Só no dia 26/11.</h1>
-      <p class="lead">Concentradoras, trommels, finalizadoras, carpetes e acessórios. O desconto só é liberado no dia 26/11, e quem está na lista fica sabendo primeiro.</p>
-      <ol class="passos">
-        <li><b>1</b><span>Você se cadastra agora, leva 30 segundos.</span></li>
-        <li><b>2</b><span>Baixa na hora o Guia Rápido "Ouro para Iniciantes", grátis.</span></li>
-        <li><b>3</b><span>No dia 26/11 a Gabi, da equipe GoldDog, te chama no WhatsApp com as condições.</span></li>
-      </ol>
-      <figure class="foto" style="margin-left:0;margin-right:0;margin-bottom:0">
-        <img src="foto-campo.jpg" alt="Concentradora GoldDog trabalhando em campo, com a água lavando o cascalho na calha" width="995" height="645" loading="eager">
-        <small>Concentradora GoldDog trabalhando em campo. Só água e gravidade, sem química.</small>
-      </figure>
+      <span class="tag">Lista GoldDog · 26/11</span>
+      <h1>Quanto ouro está indo embora <span>no seu rejeito?</span></h1>
+      <p class="lead">O garimpeiro sabe quanto pega. Quase ninguém sabe quanto perde. E a perda não aparece na bateia, aparece no fim do mês.</p>
+      <ul class="dores">
+        <li>O ouro fino que a água leva e ninguém vê.</li>
+        <li>O material que passa rápido demais porque a calha não dá conta do volume.</li>
+        <li>A despesca que come o dia inteiro e ainda deixa ouro para trás.</li>
+        <li>O dinheiro gasto em máquina que não foi feita para o seu material.</li>
+      </ul>
+      <p class="lead"><b>No dia 26/11 a GoldDog mostra o caminho para cada uma dessas dores</b>, com desconto em todos os setores, só nesse dia. Quem está na lista fica sabendo primeiro.</p>
     </div>
 
     <div class="card" id="cadastro">
       <div id="formBox">
-        <h2>Entre na lista da Black</h2>
-        <p class="sub">Grátis. Sem compromisso de compra.</p>
+        <h2>Entre na lista do dia 26/11</h2>
+        <p class="sub">Grátis, sem compromisso. Você ainda baixa na hora o Guia Rápido "Ouro para Iniciantes".</p>
         <form id="f" novalidate>
           <label><span>Seu nome</span>
             <input name="nome" autocomplete="name" required maxlength="120">
@@ -96,29 +97,23 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--ink-3);f
           <label><span>WhatsApp com DDD</span>
             <input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(66) 99999-9999" required maxlength="20">
           </label>
-          <label><span>E-mail <span class="opt">(opcional)</span></span>
-            <input name="email" type="email" autocomplete="email" maxlength="160">
-          </label>
-          <label><span>O que te interessa mais?</span>
+          <label><span>Qual dessas dores é a sua?</span>
             <select name="interesse">
-              <option value="">Escolha uma opção</option>
-              <option>Concentradora (calha)</option>
-              <option>Trommel pequeno (até GDT100)</option>
-              <option>Trommel grande (GDT150 em diante)</option>
-              <option>Finalizadora</option>
-              <option>Carpetes e acessórios</option>
-              <option>Ainda não sei, quero ajuda</option>
+              <option value="">Escolha a que mais pesa</option>
+              <option>Perco ouro fino no rejeito</option>
+              <option>A calha não dá conta do volume</option>
+              <option>A despesca demora demais</option>
+              <option>Não sei se a minha área vale a pena</option>
+              <option>Quero começar e não sei por onde</option>
+              <option>Outra dificuldade</option>
             </select>
-          </label>
-          <label><span>Cidade e estado <span class="opt">(opcional)</span></span>
-            <input name="cidade_uf" autocomplete="address-level2" placeholder="Ex.: Peixoto de Azevedo/MT" maxlength="80">
           </label>
           <div class="hp" aria-hidden="true"><label>Site <input name="site" tabindex="-1" autocomplete="off"></label></div>
           <label class="check"><input type="checkbox" name="consentimento" value="sim" required>
-            <span id="consTxt">Aceito receber da GoldDog Shop, no WhatsApp e no e-mail, o aviso e as condições da Black GoldDog e conteúdos sobre garimpo. Posso sair quando quiser, é só responder SAIR.</span></label>
+            <span id="consTxt">Aceito receber da GoldDog Shop, no WhatsApp, o aviso do dia 26/11, as condições desse dia e conteúdos sobre garimpo. Posso sair quando quiser, é só responder SAIR.</span></label>
           <p class="erro" id="erro" role="alert"></p>
           <button type="submit" id="btn">QUERO ENTRAR NA LISTA</button>
-          <p class="fine">Seus dados ficam só com a GoldDog Shop (CNPJ 67.765.666/0001-01) e servem para falar com você sobre a Black e sobre garimpo. Não vendemos nem passamos para ninguém.</p>
+          <p class="fine">Seus dados ficam só com a GoldDog Shop (CNPJ 67.765.666/0001-01) e servem para falar com você sobre o dia 26/11 e sobre garimpo. Não vendemos nem passamos para ninguém.</p>
         </form>
       </div>
       <div class="ok" id="ok" tabindex="-1">
@@ -126,8 +121,9 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--ink-3);f
         <p class="sub">Obrigado pela confiança. Veja o que acontece agora:</p>
         <ul>
           <li>Seu Guia Rápido "Ouro para Iniciantes" já está liberado aqui embaixo.</li>
-          <li>No dia 26/11 a Gabi, da equipe GoldDog, te chama no WhatsApp com as condições da Black.</li>
-          <li>O desconto vale para todos os setores da GoldDog, só no dia 26/11.</li>
+          <li>No dia 26/11 a Gabi, da equipe GoldDog, te chama no WhatsApp e mostra o caminho para a sua dor.</li>
+          <li>Nesse dia tem desconto em todos os setores da GoldDog, só no dia 26/11.</li>
+          <li>Até lá, a gente posta todo dia sobre as dores do garimpo. Siga @golddogshop.</li>
           <li>Salve o nosso número (19) 99723-6122 para a mensagem chegar certinho.</li>
         </ul>
         <a class="btn2" href="guia-rapido-ouro-para-iniciantes.pdf" download>BAIXAR O GUIA GRÁTIS (PDF)</a>
@@ -135,7 +131,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--ink-3);f
     </div>
   </section>
 </main>
-<footer><div class="wrap">GoldDog Shop · CNPJ 67.765.666/0001-01 · <a href="https://www.golddogshop.com.br" style="color:inherit">golddogshop.com.br</a> · Recuperação acima de 90%, com o equipamento bem montado e regulado para o material. Garantia de 90 dias contra defeitos de fabricação e de matéria-prima.</div></footer>
+<footer><div class="wrap">GoldDog Shop · CNPJ 67.765.666/0001-01 · <a href="https://www.golddogshop.com.br" style="color:inherit">golddogshop.com.br</a></div></footer>
 <script>
 // ===== Configuração =====
 const ENDPOINT = 'https://salaexecutiva.app.n8n.cloud/webhook/bf2026-cadastro';
