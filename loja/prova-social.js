@@ -1,8 +1,8 @@
 /*
   Prova social sem nomes · loja golddogshop.com.br (plano Robotcop, ideia 4)
   Teo (Tecnologia) 19/11/2026. DESLIGADO até o Lucas (LGPD) e o Sr. Anderson aprovarem.
-  Mostra só um número agregado e real, vindo do n8n (fluxo "Site · prova social da semana", ZfXlvN5sC7xvy2r2):
-  contatos únicos que chamaram a GoldDog nos últimos 7 dias, sem testes. Nunca nome, cidade nem telefone.
+  Mostra só um número agregado e real, vindo do n8n (fluxo "Site · prova social da semana", pXIQgYHXvBkCZx7C):
+  contatos únicos dos últimos 7 dias, sem testes; um agendamento a cada 6 h grava SÓ o número e o site lê só ele (LGPD, Lucas 19/11). Nunca nome, cidade nem telefone.
   Abaixo de 5 não aparece nada. Guarda o número no navegador por 6 h, para não gastar execução a cada visita.
   Teste sem afetar a loja: ?ps_teste=1 (mostra mesmo desligado) ou ?ps_teste=23 (simula o número).
 */
@@ -11,7 +11,7 @@
   var CONFIG = {
     LIGADO: false,
     URL: 'https://salaexecutiva.app.n8n.cloud/webhook/prova-social-semana', // trocar pelo servidor novo depois da migração
-    TEXTO: function (n) { return n + ' garimpeiros chamaram a GoldDog nos últimos 7 dias'; },
+    TEXTO: function (n) { return n + ' pessoas chamaram a GoldDog nos últimos 7 dias'; },
     CACHE_H: 6
   };
   var q = new URLSearchParams(location.search).get('ps_teste');
