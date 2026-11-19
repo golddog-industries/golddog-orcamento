@@ -15,6 +15,13 @@
   if (!CONFIG.LIGADO && !teste) return;
   var handle = (location.pathname.match(/\/produtos\/([^\/?#]+)/) || [])[1] || '';
   var campanha = Date.now() < new Date(CONFIG.FIM_BLACK).getTime() ? CONFIG.CAMPANHA_BLACK : CONFIG.CAMPANHA;
+  // Nome curto do produto (Tony 19/11): "GDT100 MAX", "GD3030S"; senão o fim da URL.
+  function nomeCurto() {
+    var n = (document.querySelector('.js-product-name, h1') || {}).textContent || '';
+    var m = n.toUpperCase().match(/\b(GDT|GDF|GDM|GD)\s?-?(\d{2,4}[A-Z]?)((\s+(PRO|MAX|XL|S))*)/);
+    if (m) return (m[1] + m[2] + m[3]).replace(/\s+/g, ' ').trim();
+    return handle ? handle.toUpperCase().replace(/-/g, ' ').slice(0, 30) : '';
+  }
   function ponto(a) {
     if (a.closest('.gdbk-cd')) return 'faixa_black';
     if (a.closest('.js-product-form, #product_form')) return 'produto_botao';
@@ -36,7 +43,7 @@
       } else if (/(^|\.)wa\.me$|api\.whatsapp\.com$/.test(u.hostname)) {
         var t = u.searchParams.get('text') || '';
         if (t.indexOf(CONFIG.CODIGO_WA) === 0) return;
-        var cod = CONFIG.CODIGO_WA + (handle ? ' ' + handle.toUpperCase().slice(0, 30) : '') + ':';
+        var cod = CONFIG.CODIGO_WA + (nomeCurto() ? ' ' + nomeCurto() : '') + ':';
         u.searchParams.set('text', (cod + ' ' + t).trim());
         a.setAttribute('href', u.toString());
       }
