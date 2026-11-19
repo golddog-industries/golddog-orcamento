@@ -55,7 +55,7 @@
     else if (nome && nome.parentNode) nome.parentNode.insertBefore(el, nome.nextSibling);
     else return;
     var last = {}, timer;
-    var lista = CONFIG.LINK_LISTA ? '<a href="' + CONFIG.LINK_LISTA + '">Entre na lista</a>' : '';
+    var lista = CONFIG.LINK_LISTA ? '<a href="' + CONFIG.LINK_LISTA + (CONFIG.LINK_LISTA.indexOf('?') < 0 ? '?' : '&') + 'utm_source=loja&utm_medium=faixa_black&utm_campaign=black2026&utm_content=' + encodeURIComponent(prod.handle) + '">Entre na lista</a>' : '';
     function upd() {
       var now = agora(), hoje = now >= ABRE, t = Math.max(0, (hoje ? FECHA : ABRE) - now);
       if (now > FECHA) { el.remove(); clearInterval(timer); return; }
