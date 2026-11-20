@@ -217,6 +217,15 @@ footer{border-top:1px solid var(--line);padding:22px 0 110px;color:var(--ink-3);
 .anim .camadas.in .cam-v{animation:pousa .7s cubic-bezier(.2,.8,.2,1) .2s both}
 @keyframes pousa{0%{transform:translateY(-40px);opacity:0}100%{transform:none;opacity:1}}
 
+.hpreco{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin-top:12px;font-weight:900;text-transform:uppercase;line-height:1}
+.hp-de{font-size:15px;color:var(--ink-3)}
+.hp-de s{color:var(--ink-2);text-decoration-color:var(--warn);text-decoration-thickness:3px}
+.hp-por{font-size:15px;color:var(--ink-2)}
+.hp-por b{font-size:clamp(34px,10vw,44px);color:var(--y);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.hp-pct{background:var(--y);color:#0b0b0b;font-size:15px;padding:5px 8px;border-radius:8px;align-self:center}
+@media (min-width:880px){.hpreco{display:none}}
+@media (max-width:879px){.hero{padding-top:20px}.hgrid{gap:14px;margin-top:10px}.medida{margin-top:10px;font-size:16px}.garimpo{margin-top:8px}.kits{margin-top:8px}.ego{margin-top:8px}.fotos figure{aspect-ratio:4/3}.oferta{margin-top:16px}}
+@media (max-width:360px){.por b{font-size:34px}.selo{padding:4px 8px 6px}.selo b{font-size:26px}.selo span{font-size:14px}.precos{gap:6px}}
 /* barra fixa no celular */
 .fixo{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:8px;padding:10px var(--g) calc(10px + env(safe-area-inset-bottom));background:rgba(11,11,11,.95);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .35s ease}
 .fixo.on{transform:none}
@@ -295,6 +304,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 110px;color:var(--ink-3);
       <div class="hgrid">
         <div>
           <h1 class="kin"><span class="w w1">Combo</span><span class="w w2">vazado +</span><span class="w w3"><em>resinado</em></span></h1>
+          <p class="hpreco"><span class="hp-de">De <s data-preco="normal">R$ 195,00</s></span> <span class="hp-por">por <b data-preco="combo">R$ 79,99</b></span> <span class="hp-pct"><span data-pct>59%</span> OFF</span></p>
           <p class="medida">Dois carpetes num conjunto só: o vazado em cima, o resinado embaixo · <b>30&nbsp;cm&nbsp;×&nbsp;1&nbsp;m</b> · com a tela expandida junto</p>
           <p class="garimpo js-perda">No domingo volta para R$ 195,00.</p>
           <p class="kits"><b>Só 36 kits</b> nesta oferta</p>
