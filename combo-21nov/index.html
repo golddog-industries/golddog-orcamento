@@ -152,8 +152,6 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
 .item .foto img{width:100%;height:100%;object-fit:cover}
 .item .foto{overflow:hidden}
 .item .corpo{padding:16px}
-.item-txt{grid-template-columns:1fr!important}
-@media (min-width:760px){.item-txt{grid-column:1/-1}}
 .item .tag{display:inline-block;font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--y);border:1px solid var(--y);border-radius:6px;padding:4px 7px}
 .item h3{font-weight:900;font-size:20px;text-transform:uppercase;line-height:1.05;margin-top:10px}
 .item p{color:var(--ink-2);font-size:15px;margin-top:6px}
@@ -180,12 +178,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 110px;color:var(--ink-3);
 @media (min-width:600px){.vids{grid-template-columns:repeat(2,1fr)}}
 @media (min-width:1000px){.vids.n3{grid-template-columns:repeat(3,1fr)}.vids.n4{grid-template-columns:repeat(4,1fr)}}
 .vid{margin:0}
-.vid .tela{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;border-radius:16px;overflow:hidden;background:#1a1a1a radial-gradient(circle at 50% 45%,#2a2a2a,#111);cursor:pointer;font:inherit;color:inherit}
-.vid .tela img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
-.vid .tela:hover img{transform:scale(1.04)}
-.vid .tela::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.65))}
+.vid .quadro{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;border-radius:16px;overflow:hidden;background:#1a1a1a radial-gradient(circle at 50% 45%,#2a2a2a,#111);cursor:pointer;font:inherit;color:inherit}
+.vid .quadro img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.vid .quadro:hover img{transform:scale(1.04)}
+.vid .quadro::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.65))}
 .vid .play{position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:50%;background:var(--y);display:grid;place-items:center;z-index:2;box-shadow:0 8px 30px rgba(0,0,0,.5);transition:transform .2s ease}
-.vid .tela:hover .play,.vid .tela:focus-visible .play{transform:scale(1.1)}
+.vid .quadro:hover .play,.vid .quadro:focus-visible .play{transform:scale(1.1)}
 .vid .play svg{width:28px;height:28px;margin-left:4px}
 .vid .tempo{position:absolute;left:10px;bottom:10px;z-index:2;background:#0b0b0b;color:var(--y);font-weight:900;font-size:12px;letter-spacing:.06em;padding:5px 8px;border-radius:7px}
 .vid iframe{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:16px;background:#000}
@@ -203,17 +201,13 @@ footer{border-top:1px solid var(--line);padding:22px 0 110px;color:var(--ink-3);
 .cam-img{flex:0 0 52%;height:96px;background-size:cover;background-position:center}
 .cam-tx{font-size:15px;color:var(--ink-2);padding-right:12px;line-height:1.2}
 .cam-tx b{display:block;font-size:22px;font-weight:900;color:var(--y);letter-spacing:-.01em}
-.cam-t{background:#222;z-index:3;margin-right:12%}
-.cam-t .cam-img{background-color:#fff}
-.cam-v{background:#1c1c1c;z-index:2;margin-top:-14px;margin-left:3%;margin-right:3%}
-.cam-v .cam-img,.cam-v .cam-tx{margin-top:14px}
-.cam-r{background:#151515;margin-top:-14px;z-index:1;margin-left:12%}
+.cam-v{background:#1c1c1c;z-index:2;margin-right:6%}
+.cam-r{background:#151515;margin-top:-14px;z-index:1;margin-left:6%}
 .cam-r .cam-img{margin-top:14px;height:96px}
 .cam-r .cam-tx{padding-top:14px}
 .cam-fluxo{position:absolute;left:0;right:0;top:-14px;text-align:center;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
 .separados{margin-top:4px;color:var(--ink-2);font-size:16px;max-width:40em;background:var(--s1);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
 .separados b{color:var(--y)}
-.anim .camadas.in .cam-t{animation:pousa .7s cubic-bezier(.2,.8,.2,1) .05s both}
 .anim .camadas.in .cam-v{animation:pousa .7s cubic-bezier(.2,.8,.2,1) .2s both}
 @keyframes pousa{0%{transform:translateY(-40px);opacity:0}100%{transform:none;opacity:1}}
 
@@ -305,7 +299,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 110px;color:var(--ink-3);
         <div>
           <h1 class="kin"><span class="w w1">Combo</span><span class="w w2">vazado +</span><span class="w w3"><em>resinado</em></span></h1>
           <p class="hpreco"><span class="hp-de">De <s data-preco="normal">R$ 195,00</s></span> <span class="hp-por">por <b data-preco="combo">R$ 79,99</b></span> <span class="hp-pct"><span data-pct>59%</span> OFF</span></p>
-          <p class="medida">Dois carpetes num conjunto só: o vazado em cima, o resinado embaixo · <b>30&nbsp;cm&nbsp;×&nbsp;1&nbsp;m</b> · com a tela expandida junto</p>
+          <p class="medida">Dois carpetes num conjunto só: o vazado em cima, o resinado embaixo · <b>30&nbsp;cm&nbsp;×&nbsp;1&nbsp;m</b></p>
           <p class="garimpo js-perda">No domingo volta para R$ 195,00.</p>
           <p class="kits"><b>Só 36 kits</b> nesta oferta</p>
           <p class="ego">O cara do garimpo é você.</p>
@@ -327,7 +321,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 110px;color:var(--ink-3);
           </div>
           <span class="selo"><b data-pct>59%</b><span>OFF</span></span>
         </div>
-        <p class="parc">Kit com vazado, resinado e tela expandida. Só 36 kits. Preço só no dia 21/11, direto no carrinho da loja.</p>
+        <p class="parc">Carpete vazado GoldMoss + carpete resinado. Só 36 kits. Preço só no dia 21/11, direto no carrinho da loja.</p>
 
         <p class="estoque" id="estoque" hidden aria-live="polite"><i aria-hidden="true"></i><span>Restam <b id="estoqueN">0</b> kits na loja agora</span></p>
 
@@ -374,8 +368,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 110px;color:var(--ink-3);
       <p class="eyebrow rev">O que vem no combo</p>
       <h2 class="h2 rev">Dois carpetes, <span class="o">um conjunto só</span></h2>
       <p class="intro rev">O vazado vai em cima e o resinado vai embaixo. Juntos, são o conjunto completo para segurar <b>ouro fino, granulado e talco</b>.</p>
-      <div class="camadas rev" aria-label="Montagem: tela expandida, carpete vazado em cima, carpete resinado embaixo">
-        <div class="cam cam-t"><span class="cam-img" style="background-image:url(assets/tela-expandida.webp);background-size:auto 120%"></span><span class="cam-tx"><b>TELA EXPANDIDA</b> (vem no kit)</span></div>
+      <div class="camadas rev" aria-label="Montagem: carpete vazado em cima, carpete resinado embaixo">
         <div class="cam cam-v"><span class="cam-img" style="background-image:url(assets/vazado-textura.webp)"></span><span class="cam-tx"><b>VAZADO</b> (em cima)</span></div>
         <div class="cam cam-r"><span class="cam-img" style="background-image:url(assets/resinado-textura.webp)"></span><span class="cam-tx"><b>RESINADO</b> (embaixo)</span></div>
         <p class="cam-fluxo" aria-hidden="true">água e material passam por cima ↓</p>
@@ -390,12 +383,8 @@ footer{border-top:1px solid var(--line);padding:22px 0 110px;color:var(--ink-3);
           <div class="foto"><img src="assets/resinado-textura.webp" width="311" height="311" loading="lazy" decoding="async" alt="Carpete resinado do kit, foto real da loja"></div>
           <div class="corpo"><span class="tag">Vai embaixo</span><h3>Carpete resinado</h3><p>30 cm × 1 m. Vai embaixo do vazado e segura o concentrado que desce por ele.</p></div>
         </article>
-        <article class="item rev">
-          <div class="foto"><img src="assets/tela-expandida.webp" width="241" height="209" loading="lazy" decoding="async" alt="Tela expandida do kit, foto real da loja"></div>
-          <div class="corpo"><span class="tag">Vem junto</span><h3>Tela expandida</h3><p>Para calha de 30 cm × 1 m. Com ela, o fundo da calha vem completo: vazado, resinado e tela, num pedido só.</p></div>
-        </article>
       </div>
-      <p class="nota rev" id="notaItens">O combo é o Kit GoldMoss 30 cm × 1 m + resinado + tela expandida da loja. Só água e gravidade, sem química. Fotos reais do kit na loja (recorte da textura).</p>
+      <p class="nota rev" id="notaItens">O combo: carpete vazado GoldMoss 30 cm × 1 m + carpete resinado 30 cm × 1 m. Só água e gravidade, sem química. Fotos reais da loja (recorte da textura).</p>
     </div>
   </section>
 
@@ -545,7 +534,7 @@ const VIDEOS = [
     const mmss = t => Math.floor(t / 60) + ':' + p2(t % 60);
     VIDEOS.forEach(v => {
       const f = document.createElement('figure'); f.className = 'vid rev';
-      const b = document.createElement('button'); b.type = 'button'; b.className = 'tela';
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'quadro';
       b.setAttribute('aria-label', 'Ver vídeo: ' + v.legenda);
       b.innerHTML = '<img src="https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" alt="" onerror="this.remove()"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="#0b0b0b" d="M8 5v14l11-7z"/></svg></span><span class="tempo">a partir de ' + mmss(v.inicio) + '</span>';
       b.addEventListener('click', () => {
@@ -568,7 +557,7 @@ const VIDEOS = [
     io ? io.observe(el) : el.classList.add('in');
   });
 
-  // barra fixa no celular depois que o bloco de compra sai da tela
+  // barra fixa no celular depois que o bloco de compra sai da vista
   const fixo = $('fixo'), oferta = $('comprar');
   if (io) new IntersectionObserver(([e]) => fixo.classList.toggle('on', !e.isIntersecting && e.boundingClientRect.top < 0)).observe(oferta);
   else fixo.classList.add('on');
