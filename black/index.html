@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>A Black das Blacks · GoldDog</title>
-<meta name="description" content="A Black das Blacks na GoldDog é só no dia 26/11: descontos inacreditáveis, itens selecionados com até 50%. Entre na lista e receba as condições primeiro.">
+<meta name="description" content="A Black das Blacks na GoldDog é só no dia 26/11: descontos inacreditáveis, itens selecionados com até 50%. Entre na lista: no dia 26/11 a lista recebe primeiro, pela Gabi no WhatsApp.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#0b0b0b">
 <meta property="og:title" content="A BLACK DAS BLACKS NA GOLDDOG · só no dia 26/11">
-<meta property="og:description" content="Descontos inacreditáveis. Itens selecionados com até 50%. Entre na lista e receba as condições primeiro, antes de todo mundo.">
+<meta property="og:description" content="Descontos inacreditáveis. Itens selecionados com até 50%. No dia 26/11 a lista recebe primeiro, pela Gabi no WhatsApp.">
 <!--
   Página da Black GoldDog (v2, landing animada) · Sr. Anderson 20/11/2026: "algo bem dinâmico, animado".
   Mesmo formulário e mesmo envio da v1 (fluxo n8n "BF2026 - Cadastro Black Friday", webhook bf2026-cadastro): mesmos campos, mesma origem/UTM, mesmo texto LGPD.
@@ -42,7 +42,7 @@ a{color:inherit}
 header{border-bottom:1px solid var(--line)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;padding-bottom:14px}
 .logo{font-weight:900;letter-spacing:.03em;font-size:20px}.logo b{color:var(--y)}.logo small{color:var(--ink-3);font-weight:500;letter-spacing:0;font-size:14px;margin-left:4px}
-.hdr-cta{font-weight:800;font-size:13px;letter-spacing:.04em;text-decoration:none;border:1px solid var(--y);color:var(--y);border-radius:999px;padding:8px 14px;white-space:nowrap}
+.hdr-cta{font-weight:800;font-size:13px;letter-spacing:.04em;text-decoration:none;border:1px solid var(--y);color:var(--y);border-radius:999px;padding:0 16px;min-height:44px;display:inline-flex;align-items:center;white-space:nowrap}
 .hdr-cta:hover{background:var(--y);color:#0b0b0b}
 
 /* ===== Hero ===== */
@@ -65,7 +65,8 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
 .desc{font-weight:900;font-size:clamp(26px,7vw,52px);line-height:1;letter-spacing:-.02em;text-transform:uppercase}
 .desc .l{display:inline-block}
 .ate{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:14px}
-.ate small{font-weight:800;font-size:clamp(14px,3.6vw,18px);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);max-width:12em;line-height:1.2}
+.ate small{font-weight:900;font-size:clamp(22px,6vw,36px);letter-spacing:-.01em;text-transform:uppercase;color:var(--ink);line-height:1}
+.garimpo{margin-top:16px;font-weight:900;font-size:clamp(22px,6vw,34px);line-height:1.05;color:var(--y);letter-spacing:-.01em}
 .selo{display:inline-flex;align-items:baseline;gap:6px;border:3px solid var(--y);color:var(--y);border-radius:14px;padding:6px 14px 8px;transform:rotate(-5deg);font-weight:900;text-transform:uppercase;line-height:1}
 .selo span{font-size:clamp(16px,4vw,22px)}
 .selo b{font-size:clamp(44px,12vw,72px);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
@@ -208,12 +209,13 @@ footer{border-top:1px solid var(--line);padding:22px 0 100px;color:var(--ink-3);
 .anim .desc .l{opacity:0;transform:translateY(.6em) rotate(8deg);animation:sobe .5s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(1.5s + var(--i) * 35ms)}
 @keyframes sobe{to{opacity:1;transform:none}}
 .anim .ate{opacity:0;animation:aparece .4s ease 2.3s forwards}
+.anim .garimpo{opacity:0;animation:aparece .5s ease 2.1s forwards}
 @keyframes aparece{to{opacity:1}}
 .anim .selo{animation:carimbo .5s cubic-bezier(.2,.9,.3,1.4) 2.45s both,respira 2.6s ease-in-out 3.2s infinite}
 @keyframes carimbo{0%{opacity:0;transform:rotate(-5deg) scale(2.6)}100%{opacity:1;transform:rotate(-5deg) scale(1)}}
 @keyframes respira{50%{transform:rotate(-5deg) scale(1.05)}}
-.anim .rot ul{animation:roda 10s cubic-bezier(.7,0,.3,1) infinite}
-@keyframes roda{0%,18%{transform:translateY(0)}20%,38%{transform:translateY(-1.5em)}40%,58%{transform:translateY(-3em)}60%,78%{transform:translateY(-4.5em)}80%,98%{transform:translateY(-6em)}100%{transform:translateY(-7.5em)}}
+.anim .rot ul{animation:roda 5s cubic-bezier(.7,0,.3,1) infinite}
+@keyframes roda{0%,45%{transform:translateY(0)}50%,95%{transform:translateY(-1.5em)}100%{transform:translateY(-3em)}}
 .anim .cont b.vira{animation:digito .35s cubic-bezier(.2,.8,.2,1)}
 @keyframes digito{0%{transform:translateY(-55%);opacity:0}100%{transform:none;opacity:1}}
 .anim .btn-y::after{animation:brilho 3.2s ease-in-out 3s infinite}
@@ -257,18 +259,19 @@ footer{border-top:1px solid var(--line);padding:22px 0 100px;color:var(--ink-3);
       <div class="linha2">
         <div>
           <p class="desc" id="desc">Descontos inacreditáveis</p>
+          <p class="garimpo">O cara do garimpo é você.</p>
           <div class="ate"><small>Itens selecionados com</small><span class="selo"><span>até</span><b id="pct">50%</b></span></div>
-          <div class="rot">Vão estar na Black: <span class="jan"><ul aria-hidden="true"><li>Carpetes Âncora</li><li>Bateias</li><li>GD3030 MAX</li><li>Concentradoras</li><li>Trommels</li><li>Carpetes Âncora</li></ul><span class="sr">carpetes Âncora, bateias, concentradora GD3030 MAX, concentradoras e trommels</span></span></div>
+          <div class="rot">Vão estar na Black: <span class="jan"><ul aria-hidden="true"><li>Carpetes Âncora</li><li>Bateias</li><li>Carpetes Âncora</li></ul><span class="sr">carpetes Âncora e bateias</span></span></div>
         </div>
         <div class="cont-box">
-          <p class="cont-tit" id="contTit">Só 1 dia · faltam para o <b>26/11</b></p>
+          <p class="cont-tit" id="contTit">A Black é só no dia <b>26/11</b> · faltam</p>
           <div class="cont" id="cont" aria-live="off"><div><b id="cd">0</b><small>dias</small></div><div><b id="ch">00</b><small>horas</small></div><div><b id="cm">00</b><small>min</small></div><div><b id="cs">00</b><small>seg</small></div></div>
           <p class="hoje-msg" id="hojeMsg">A Black é hoje!</p>
         </div>
       </div>
       <div class="ctas">
         <a class="btn btn-y" href="#cadastro">Garanta seu lugar na lista</a>
-        <a class="btn btn-o" href="https://wa.me/5519997236122?text=Quero%20a%20BLACK%20GOLDDOG" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Quero a Black no WhatsApp</a>
+        <a class="btn btn-o" href="https://wa.me/5519997236122?text=Quero%20a%20BLACK%20GOLDDOG%20(site%20black)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Quero a Black no WhatsApp</a>
       </div>
     </div>
   </section>
@@ -282,11 +285,11 @@ footer{border-top:1px solid var(--line);padding:22px 0 100px;color:var(--ink-3);
     <div class="wrap">
       <p class="eyebrow rev">O que vai ter</p>
       <h2 class="h2 rev">Vão estar <span class="o">na Black</span></h2>
-      <p class="intro rev">Itens selecionados de cada linha da loja. Quanto cada um vai custar no dia, só quem estiver na lista fica sabendo primeiro.</p>
+      <p class="intro rev">Itens selecionados da loja. Quanto cada um vai custar no dia, só quem estiver na lista fica sabendo primeiro.</p>
       <div class="grade">
         <article class="prod c-a rev">
           <span class="vai">Vai estar na Black</span>
-          <div class="foto"><img src="assets/gd3030-max.webp" width="371" height="520" loading="lazy" decoding="async" alt="Concentradora GD3030 MAX, foto real da loja"></div>
+          <div class="foto"><img src="assets/gd3030-max.webp" width="520" height="640" loading="lazy" decoding="async" alt="Concentradora GD3030 MAX, foto real da loja"></div>
           <div class="corpo">
             <h3>Concentradora GD3030 MAX</h3>
             <p>Com 2 carpetes Âncora. Água e gravidade, sem energia e sem química.</p>
@@ -303,22 +306,22 @@ footer{border-top:1px solid var(--line);padding:22px 0 100px;color:var(--ink-3);
           </div>
         </article>
         <article class="prod c-c rev">
-          <span class="vai">Vai estar na Black</span>
-          <div class="foto redonda"><img src="assets/bateia.webp" width="420" height="420" loading="lazy" decoding="async" alt="Bateia Turbo, foto real da loja"></div>
-          <div class="corpo"><h3>Bateias</h3><p>Para testar o material e conferir o rejeito.</p></div>
+          <span class="vai">Linha na Black</span>
+          <div class="foto"><img src="assets/bateia.webp" width="600" height="600" loading="lazy" decoding="async" alt="Bateia, foto real da loja" style="object-fit:cover;padding:0"></div>
+          <div class="corpo"><h3>Bateias</h3><p>Para testar o material e conferir o rejeito. Foto ilustrativa.</p></div>
         </article>
         <article class="prod c-d rev">
-          <span class="vai">Vai estar na Black</span>
+          <span class="vai">Linha na Black</span>
           <div class="foto"><img src="assets/gd3060-pro.webp" width="480" height="480" loading="lazy" decoding="async" alt="Concentradora GD3060 PRO, foto real da loja"></div>
-          <div class="corpo"><h3>Concentradoras</h3><p>Foto: GD3060 PRO.</p></div>
+          <div class="corpo"><h3>Concentradoras</h3><p>Foto ilustrativa da linha (GD3060 PRO).</p></div>
         </article>
         <article class="prod c-e rev">
-          <span class="vai">Vai estar na Black</span>
+          <span class="vai">Linha na Black</span>
           <div class="foto"><img src="assets/gdt05-max.webp" width="480" height="480" loading="lazy" decoding="async" alt="Mini trommel GDT05 MAX, foto real da loja"></div>
-          <div class="corpo"><h3>Trommels</h3><p>Foto: GDT05 MAX.</p></div>
+          <div class="corpo"><h3>Trommels</h3><p>Foto ilustrativa da linha (GDT05 MAX).</p></div>
         </article>
       </div>
-      <p class="nota rev">Itens selecionados: nem todo modelo entra. A lista dos itens e as condições saem no dia 26/11, valendo só nesse dia. Preços de hoje conferidos em golddogshop.com.br em 20/11/2026. Fotos reais da loja; cada equipamento é configurado para o material e a aplicação de quem compra.</p>
+      <p class="nota rev">Itens selecionados: nem todo modelo entra. Os itens e as condições valem só no dia 26/11. No dia 26/11 a lista recebe primeiro, pela Gabi no WhatsApp. Preços de hoje conferidos em golddogshop.com.br em 20/11/2026. Fotos reais da loja; cada equipamento é configurado para o material e a aplicação de quem compra.</p>
     </div>
   </section>
 
@@ -328,8 +331,8 @@ footer{border-top:1px solid var(--line);padding:22px 0 100px;color:var(--ink-3);
       <h2 class="h2 rev">Quem está na lista <span class="o">sai na frente</span></h2>
       <div class="passos">
         <div class="passo rev"><div class="n">01</div><h3>Cadastre-se hoje</h3><p>Nome e WhatsApp, leva menos de um minuto. Grátis e sem compromisso.</p></div>
-        <div class="passo rev"><div class="n">02</div><h3>Receba as condições primeiro</h3><p>A lista fica sabendo antes de todo mundo quais itens entram e como vai ser a Black.</p></div>
-        <div class="passo rev"><div class="n">03</div><h3>No dia 26/11 a Gabi chama</h3><p>A Gabi, da equipe GoldDog, chama no WhatsApp no dia da Black com as condições na mão.</p></div>
+        <div class="passo rev"><div class="n">02</div><h3>A lista recebe primeiro</h3><p>No dia 26/11 a lista recebe primeiro, pela Gabi no WhatsApp.</p></div>
+        <div class="passo rev"><div class="n">03</div><h3>Fique de olho no WhatsApp</h3><p>Salve o número (19) 99723-6122. É por ele que a Gabi, da equipe GoldDog, manda as condições da Black.</p></div>
       </div>
     </div>
   </section>
@@ -339,22 +342,22 @@ footer{border-top:1px solid var(--line);padding:22px 0 100px;color:var(--ink-3);
       <div class="cad">
         <div class="cad-lado rev">
           <p class="eyebrow">Lista da Black · 26/11</p>
-          <p class="big" style="margin-top:10px">Garanta o seu lugar <b>antes de todo mundo</b></p>
+          <p class="big" style="margin-top:10px">Garanta o seu lugar <b>na lista da Black</b></p>
           <ul>
-            <li>As condições da Black chegam primeiro para a lista.</li>
-            <li>No dia 26/11 a Gabi chama no WhatsApp.</li>
-            <li>Na hora do cadastro, o Guia Rápido "Ouro para Iniciantes" grátis.</li>
+            <li>No dia 26/11 a lista recebe primeiro, pela Gabi no WhatsApp.</li>
+            <li>O cadastro é grátis e sem compromisso.</li>
+            <li>Para sair da lista, é só pedir no WhatsApp.</li>
           </ul>
           <div class="zap">
             <p>Prefere falar direto? Um toque e a mensagem já vai pronta para o nosso WhatsApp de vendas.</p>
-            <a class="btn btn-o" href="https://wa.me/5519997236122?text=Quero%20a%20BLACK%20GOLDDOG" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Quero a Black no WhatsApp</a>
+            <a class="btn btn-o" href="https://wa.me/5519997236122?text=Quero%20a%20BLACK%20GOLDDOG%20(site%20black)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Quero a Black no WhatsApp</a>
           </div>
         </div>
 
         <div class="card rev" id="cadastro">
           <div id="formBox">
             <h2>Entre na lista da Black</h2>
-            <p class="sub">Grátis, sem compromisso. E ainda baixa na hora o Guia Rápido "Ouro para Iniciantes".</p>
+            <p class="sub">Grátis e sem compromisso. Leva menos de um minuto.</p>
             <form id="f" novalidate>
               <label><span>Seu nome</span>
                 <input name="nome" autocomplete="name" required maxlength="120">
@@ -380,20 +383,18 @@ footer{border-top:1px solid var(--line);padding:22px 0 100px;color:var(--ink-3);
                 <span id="consTxt">Aceito receber da GoldDog Shop, no WhatsApp, o aviso do dia 26/11, as condições desse dia e conteúdos sobre garimpo. Posso sair quando quiser, é só responder SAIR.</span></label>
               <p class="erro" id="erro" role="alert"></p>
               <button type="submit" id="btn" class="btn btn-y">QUERO ENTRAR NA LISTA</button>
-              <p class="fine">Seus dados ficam só com a GoldDog Shop (CNPJ 67.765.666/0001-01) e servem para falar com você sobre o dia 26/11 e sobre garimpo. Não vendemos nem passamos para ninguém.</p>
+              <p class="fine">GoldDog Shop (CNPJ 67.765.666/0001-01). Usamos seus dados só para falar da Black GoldDog. Para sair da lista, é só pedir no WhatsApp. <a href="https://www.golddogshop.com.br/politica-de-privacidade/" target="_blank" rel="noopener">Política de privacidade</a>.</p>
             </form>
           </div>
           <div class="ok" id="ok" tabindex="-1">
             <h2>Pronto, seu nome está na lista!</h2>
             <p class="sub">Obrigado pela confiança. Veja o que acontece agora:</p>
             <ul>
-              <li>O Guia Rápido "Ouro para Iniciantes" já está liberado aqui embaixo.</li>
-              <li>No dia 26/11 a Gabi, da equipe GoldDog, chama no WhatsApp com as condições da Black.</li>
+              <li>No dia 26/11 a lista recebe primeiro, pela Gabi no WhatsApp.</li>
               <li>A Black das Blacks é só no dia 26/11: itens selecionados com até 50%.</li>
               <li>Até lá, siga @golddogshop para não perder nada.</li>
               <li>Salve o nosso número (19) 99723-6122 para a mensagem chegar certinho.</li>
             </ul>
-            <a class="btn btn-y" href="guia-rapido-ouro-para-iniciantes.pdf" download>Baixar o guia grátis (PDF)</a>
           </div>
         </div>
       </div>
@@ -403,7 +404,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 100px;color:var(--ink-3);
 
 <div class="fixo" id="fixo">
   <a class="btn btn-y" href="#cadastro">Entrar na lista da Black</a>
-  <a class="btn btn-o" href="https://wa.me/5519997236122?text=Quero%20a%20BLACK%20GOLDDOG" target="_blank" rel="noopener" aria-label="Quero a Black no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg></a>
+  <a class="btn btn-o" href="https://wa.me/5519997236122?text=Quero%20a%20BLACK%20GOLDDOG%20(site%20black)" target="_blank" rel="noopener" aria-label="Quero a Black no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg></a>
 </div>
 <footer><div class="wrap">GoldDog Shop · CNPJ 67.765.666/0001-01 · <a href="https://www.golddogshop.com.br">golddogshop.com.br</a> · Black das Blacks só no dia 26/11/2026, itens selecionados.</div></footer>
 
