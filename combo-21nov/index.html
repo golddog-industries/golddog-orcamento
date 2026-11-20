@@ -193,19 +193,25 @@ footer{border-top:1px solid var(--line);padding:22px 0 110px;color:var(--ink-3);
 
 .kits{display:inline-flex;margin-top:12px;align-items:center;gap:8px;background:var(--y);color:#0b0b0b;font-weight:800;font-size:15px;text-transform:uppercase;letter-spacing:.04em;padding:8px 12px;border-radius:10px;transform:rotate(-1.5deg)}
 .kits b{font-weight:900}
+.ego{margin-top:12px;font-weight:900;font-size:clamp(18px,5vw,24px);color:var(--ink)}
+.js-perda a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 .perda-box{margin-top:12px;font-weight:900;text-transform:uppercase;font-size:clamp(17px,4.6vw,22px);line-height:1.15;color:#fff;background:rgba(226,114,91,.14);border-left:4px solid var(--warn);padding:10px 12px;border-radius:8px}
 .camadas{position:relative;margin:26px auto 0;max-width:560px;padding:10px 0 34px}
 .cam{position:relative;display:flex;align-items:center;gap:14px;border-radius:14px;overflow:hidden;border:2px solid #0b0b0b;box-shadow:0 14px 30px rgba(0,0,0,.5)}
 .cam-img{flex:0 0 52%;height:96px;background-size:cover;background-position:center}
 .cam-tx{font-size:15px;color:var(--ink-2);padding-right:12px;line-height:1.2}
 .cam-tx b{display:block;font-size:22px;font-weight:900;color:var(--y);letter-spacing:-.01em}
-.cam-v{background:#1c1c1c;z-index:2;margin-right:6%}
-.cam-r{background:#151515;margin-top:-14px;z-index:1;margin-left:6%}
+.cam-t{background:#222;z-index:3;margin-right:12%}
+.cam-t .cam-img{background-color:#fff}
+.cam-v{background:#1c1c1c;z-index:2;margin-top:-14px;margin-left:3%;margin-right:3%}
+.cam-v .cam-img,.cam-v .cam-tx{margin-top:14px}
+.cam-r{background:#151515;margin-top:-14px;z-index:1;margin-left:12%}
 .cam-r .cam-img{margin-top:14px;height:96px}
 .cam-r .cam-tx{padding-top:14px}
 .cam-fluxo{position:absolute;left:0;right:0;top:-14px;text-align:center;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
 .separados{margin-top:4px;color:var(--ink-2);font-size:16px;max-width:40em;background:var(--s1);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
 .separados b{color:var(--y)}
+.anim .camadas.in .cam-t{animation:pousa .7s cubic-bezier(.2,.8,.2,1) .05s both}
 .anim .camadas.in .cam-v{animation:pousa .7s cubic-bezier(.2,.8,.2,1) .2s both}
 @keyframes pousa{0%{transform:translateY(-40px);opacity:0}100%{transform:none;opacity:1}}
 
@@ -290,6 +296,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 110px;color:var(--ink-3);
           <p class="medida">Dois carpetes num conjunto só: o vazado em cima, o resinado embaixo · <b>30&nbsp;cm&nbsp;×&nbsp;1&nbsp;m</b> · com a tela expandida junto</p>
           <p class="garimpo js-perda">No domingo volta para R$ 195,00.</p>
           <p class="kits"><b>Só 36 kits</b> nesta oferta</p>
+          <p class="ego">O cara do garimpo é você.</p>
         </div>
         <div>
           <div class="fotos">
@@ -355,7 +362,8 @@ footer{border-top:1px solid var(--line);padding:22px 0 110px;color:var(--ink-3);
       <p class="eyebrow rev">O que vem no combo</p>
       <h2 class="h2 rev">Dois carpetes, <span class="o">um conjunto só</span></h2>
       <p class="intro rev">O vazado vai em cima e o resinado vai embaixo. Juntos, são o conjunto completo para segurar <b>ouro fino, granulado e talco</b>.</p>
-      <div class="camadas rev" aria-label="Montagem: carpete vazado em cima, carpete resinado embaixo">
+      <div class="camadas rev" aria-label="Montagem: tela expandida, carpete vazado em cima, carpete resinado embaixo">
+        <div class="cam cam-t"><span class="cam-img" style="background-image:url(assets/tela-expandida.webp);background-size:auto 120%"></span><span class="cam-tx"><b>TELA EXPANDIDA</b> (vem no kit)</span></div>
         <div class="cam cam-v"><span class="cam-img" style="background-image:url(assets/vazado-textura.webp)"></span><span class="cam-tx"><b>VAZADO</b> (em cima)</span></div>
         <div class="cam cam-r"><span class="cam-img" style="background-image:url(assets/resinado-textura.webp)"></span><span class="cam-tx"><b>RESINADO</b> (embaixo)</span></div>
         <p class="cam-fluxo" aria-hidden="true">água e material passam por cima ↓</p>
@@ -460,11 +468,14 @@ const VIDEOS = [
     const hoje = estado === 'hoje' || estado === 'esgotado';
     document.querySelectorAll('.js-dia').forEach(el => {
       if (!el.dataset.antes) el.dataset.antes = el.textContent;
-      el.textContent = hoje ? el.dataset.hoje : el.dataset.antes;
+      el.textContent = estado === 'fim' ? 'Oferta encerrada' : hoje ? el.dataset.hoje : el.dataset.antes;
     });
     const n = brl(CONFIG.precoNormalTotal);
     const perda = estado === 'antes' ? 'No domingo volta para ' + n + '.' : estado === 'fim' ? 'A oferta acabou: o kit voltou para ' + n + '.' : 'Amanhã volta para ' + n + '.';
-    document.querySelectorAll('.js-perda').forEach(el => el.textContent = perda);
+    document.querySelectorAll('.js-perda').forEach(el => {
+      if (estado === 'esgotado') el.innerHTML = 'Esgotou! <a href="../black/">Fique na lista da Black: dia 26/11</a>';
+      else el.textContent = perda;
+    });
   };
 
   let ultimoEstado = '';
