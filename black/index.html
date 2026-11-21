@@ -3,178 +3,417 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Lista GoldDog · 26/11</title>
-<meta name="description" content="Quanto ouro está indo embora no seu rejeito? No dia 26/11 a GoldDog mostra o caminho, com desconto em todos os setores. Entre na lista.">
+<title>A Black das Blacks · GoldDog</title>
+<meta name="description" content="A Black das Blacks na GoldDog é só no dia 26/11: descontos inacreditáveis, desconto em todos os setores, itens selecionados com até 50%. Entre na lista da Black.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#0b0b0b">
-<meta property="og:title" content="Quanto ouro está indo embora no seu rejeito?">
-<meta property="og:description" content="Dia 26/11 a GoldDog mostra o caminho para essa dor, com desconto em todos os setores. Entre na lista e receba o Guia Rápido grátis.">
+<meta property="og:title" content="A BLACK DAS BLACKS NA GOLDDOG · só no dia 26/11">
+<meta property="og:description" content="Descontos inacreditáveis: desconto em todos os setores, itens selecionados com até 50%. Entre na lista da Black GoldDog.">
 <!--
-  Página de cadastro da Black GoldDog · Fase 1 (cadastro 19 a 25/11, desconto só no dia 26/11).
-  Anita (Marketing), 17/11/2026. Envia para o fluxo n8n "BF2026 - Cadastro Black Friday" (RhWxanzsh5E6J1Ii).
-  Não fala o tamanho do desconto nem mostra produto: de 19 a 25/11 só a dor; a solução só aparece em 26/11 (Sr. Anderson, 17/11 16:06Z). Vídeo/foto da dor: PENDENTE (real, aprovado pelo Sr. Anderson; arquivo dor.mp4 nesta pasta). Movimento: pó de ouro descendo, contagem até 26/11, entrada animada (Sr. Anderson 17/11: nada estático).
-  Configuração: as 3 linhas no começo do <script>.
+  Página da Black GoldDog (v2, landing animada) · Sr. Anderson 20/11/2026: "algo bem dinâmico, animado".
+  Mesmo formulário e mesmo envio da v1 (fluxo n8n "BF2026 - Cadastro Black Friday", webhook bf2026-cadastro): mesmos campos, mesma origem/UTM, mesmo texto LGPD.
+  Regras: Black só no dia 26/11 · nunca dizer qual item tem qual desconto · máquina só com o preço de hoje riscado e "?" · fotos reais da loja (Nuvemshop) · a Shop só vende.
+  Preços de hoje conferidos em www.golddogshop.com.br em 20/11/2026: GD3030 MAX R$ 6.940,00 · Carpete Âncora 3090C R$ 1.350,00. Se mudar no site, mudar aqui.
+  Movimento: só CSS + JS próprio, sem biblioteca; com "reduzir movimento" ligado, tudo aparece parado.
 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet">
+<script>try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('anim')}catch(e){}</script>
 <style>
-:root{--accent:#F3B914;--ink:#fff;--ink-2:#e4e4e4;--ink-3:#a8a8a8;--canvas:#0b0b0b;--s1:#141414;--s2:#1c1c1c;--line:#2e2e2e;--ok:#4cb782;--warn:#e2725b;
---sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--r:12px;--gutter:16px}
-@media (min-width:600px){:root{--gutter:32px}}
+:root{--y:#F3B914;--ink:#fff;--ink-2:#e4e4e4;--ink-3:#a3a3a3;--bg:#0b0b0b;--s1:#141414;--s2:#1c1c1c;--line:#2e2e2e;--warn:#e2725b;
+--sans:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;--g:16px;--max:1120px}
+@media (min-width:600px){:root{--g:32px}}
 *,*::before,*::after{box-sizing:border-box}
-html{background:var(--canvas);-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:clip}
+html{background:var(--bg);-webkit-text-size-adjust:100%;overflow-x:clip;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:clip}
 img{max-width:100%;height:auto;display:block}
-h1,h2,p{margin:0}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
-.wrap{max-width:1040px;margin:0 auto;padding:0 var(--gutter)}
-header{padding:18px 0;border-bottom:1px solid var(--line)}
-.logo{font-weight:800;letter-spacing:.04em;font-size:20px}.logo b{color:var(--accent)}
-.hero{display:grid;gap:28px;padding:32px 0 40px}
-@media (min-width:880px){.hero{grid-template-columns:1.05fr .95fr;align-items:start;padding:56px 0}}
-.tag{display:inline-block;background:var(--accent);color:#0b0b0b;font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border-radius:6px}
-h1{font-size:clamp(30px,6vw,48px);line-height:1.08;margin-top:14px;font-weight:800;text-wrap:balance}
-h1 span{color:var(--accent)}
-.lead{color:var(--ink-2);font-size:18px;margin-top:14px;max-width:34em}
-.foto{margin-top:22px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
-.foto img{width:100%;aspect-ratio:995/645;object-fit:cover}
-.foto small{display:block;padding:8px 12px;color:var(--ink-3);font-size:13px;background:var(--s1)}
-.dores{margin:20px 0 6px;padding:0;list-style:none;display:grid;gap:10px}
-.dores li{position:relative;padding-left:26px;color:var(--ink-2)}
-.dores li::before{content:"";position:absolute;left:0;top:.55em;width:12px;height:12px;border-radius:2px;background:var(--warn)}
-.lead b{color:var(--ink)}
-.passos{margin:22px 0 0;padding:0;list-style:none;display:grid;gap:10px}
-.passos li{display:flex;gap:12px;align-items:flex-start;color:var(--ink-2)}
-.passos b{flex:0 0 28px;height:28px;border-radius:50%;background:var(--s2);border:1px solid var(--line);color:var(--accent);display:grid;place-items:center;font-size:14px}
-.card{background:var(--s1);border:1px solid var(--line);border-radius:16px;padding:22px}
-@media (min-width:600px){.card{padding:28px}}
-.card h2{font-size:22px;font-weight:750}
-.card .sub{color:var(--ink-3);margin-top:6px;font-size:15px}
+h1,h2,h3,p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--y);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--g)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ===== Tarja de plantão ===== */
+.tarja{background:var(--y);color:#0b0b0b;overflow:hidden;white-space:nowrap;font-weight:900;font-size:13px;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid #0b0b0b}
+.tarja .trilho{display:inline-flex;padding:8px 0}
+.tarja span{padding:0 18px}
+.tarja span::after{content:"✦";margin-left:36px}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;padding-bottom:14px}
+.logo{display:block;line-height:0}.logo img{height:38px;width:auto}
+.hdr-cta{font-weight:800;font-size:13px;letter-spacing:.04em;text-decoration:none;border:1px solid var(--y);color:var(--y);border-radius:999px;padding:0 16px;min-height:44px;display:inline-flex;align-items:center;white-space:nowrap}
+.hdr-cta:hover{background:var(--y);color:#0b0b0b}
+
+/* ===== Hero ===== */
+.hero{position:relative;overflow:hidden;isolation:isolate;padding:36px 0 44px}
+@media (min-width:880px){.hero{padding:64px 0 72px}}
+.fundo{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.fundo .gigante{position:absolute;left:0;top:50%;font-weight:900;font-size:clamp(160px,42vw,520px);line-height:.8;letter-spacing:-.04em;color:rgba(243,185,20,.05);white-space:nowrap;transform:translate(-5%,-50%)}
+.fundo .feixe{position:absolute;top:-40%;left:-30%;width:28%;height:180%;background:linear-gradient(90deg,transparent,rgba(243,185,20,.16),transparent);transform:rotate(18deg) translateX(-120%);opacity:0}
+.fundo .listras{position:absolute;right:-60px;bottom:-60px;width:260px;height:260px;background:repeating-linear-gradient(-45deg,rgba(243,185,20,.18) 0 10px,transparent 10px 22px);border-radius:50%;filter:blur(.3px)}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.kicker i{width:8px;height:8px;border-radius:50%;background:var(--y);box-shadow:0 0 0 0 rgba(243,185,20,.6)}
+.kin{margin-top:14px;font-weight:900;text-transform:uppercase;line-height:.9;letter-spacing:-.035em;font-size:clamp(46px,13.2vw,124px)}
+.kin .w{display:block}
+.kin .w2{color:var(--y)}
+.kin em{font-style:normal;position:relative;display:inline-block;color:#0b0b0b;padding:0 .08em;margin-left:-.02em}
+.kin em::before{content:"";position:absolute;inset:.06em -.02em .02em;background:var(--y);z-index:-1;transform-origin:left}
+.kin .w3{position:relative;z-index:0}
+.linha2{display:grid;gap:18px;margin-top:26px}
+@media (min-width:880px){.linha2{grid-template-columns:1.2fr 1fr;align-items:end;gap:40px}}
+.desc{font-weight:900;font-size:clamp(26px,7vw,52px);line-height:1;letter-spacing:-.02em;text-transform:uppercase}
+.desc .l{display:inline-block}
+.ate{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:14px}
+.ate small{font-weight:900;font-size:clamp(22px,6vw,36px);letter-spacing:-.01em;text-transform:uppercase;color:var(--ink);line-height:1}
+.ate small .setores{display:block;color:var(--y);font-size:.62em;letter-spacing:.02em;margin-bottom:.25em}
+.garimpo{margin-top:16px;font-weight:900;font-size:clamp(22px,6vw,34px);line-height:1.05;color:var(--y);letter-spacing:-.01em}
+.selo{display:inline-flex;align-items:baseline;gap:6px;border:3px solid var(--y);color:var(--y);border-radius:14px;padding:6px 14px 8px;transform:rotate(-5deg);font-weight:900;text-transform:uppercase;line-height:1}
+.selo span{font-size:clamp(16px,4vw,22px)}
+.selo b{font-size:clamp(44px,12vw,72px);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.rot{display:flex;align-items:center;gap:10px;margin-top:22px;font-weight:700;color:var(--ink-2);font-size:clamp(16px,4.4vw,20px)}
+.rot .jan{position:relative;display:inline-block;height:1.5em;overflow:hidden;vertical-align:bottom;color:var(--y);font-weight:900;text-transform:uppercase;min-width:9.5em}
+.rot ul{list-style:none;margin:0;padding:0}
+.rot li{height:1.5em;line-height:1.5em;white-space:nowrap}
+.cont-box{background:linear-gradient(180deg,#161616,#0f0f0f);border:1px solid var(--line);border-radius:18px;padding:16px}
+.cont-tit{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.cont-tit b{color:var(--y)}
+.cont{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.cont div{background:#0b0b0b;border:1px solid var(--line);border-radius:12px;padding:10px 4px 8px;text-align:center;overflow:hidden;position:relative}
+.cont div::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(255,255,255,.06)}
+.cont b{display:block;font-size:clamp(28px,8vw,44px);line-height:1;font-weight:900;color:var(--y);font-variant-numeric:tabular-nums}
+.cont small{display:block;margin-top:4px;color:var(--ink-3);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.hoje-msg{display:none;font-weight:900;font-size:clamp(26px,7vw,40px);color:var(--y);text-transform:uppercase;line-height:1.05;margin-top:8px}
+.bf-hoje .cont,.bf-fim .cont{display:none}.bf-hoje .hoje-msg,.bf-fim .hoje-msg{display:block}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 22px;border-radius:14px;font:inherit;font-weight:900;font-size:16px;letter-spacing:.03em;text-decoration:none;text-transform:uppercase;cursor:pointer;border:0;position:relative;overflow:hidden;transition:transform .15s ease}
+.btn:active{transform:scale(.97)}
+.btn-y{background:var(--y);color:#0b0b0b}
+.btn-y::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);opacity:0}
+.btn-y:hover{box-shadow:0 8px 30px rgba(243,185,20,.35)}
+.btn-o{background:transparent;color:var(--ink);border:2px solid #3a3a3a}
+.btn-o:hover{border-color:var(--ink)}
+.btn svg{width:22px;height:22px;flex:0 0 22px}
+@media (max-width:479px){.ctas .btn{width:100%}}
+
+/* ===== Faixas que correm com a rolagem ===== */
+.faixas{position:relative;overflow:hidden;padding:34px 0;margin:6px 0}
+.faixa{white-space:nowrap;font-weight:900;text-transform:uppercase;letter-spacing:-.02em;font-size:clamp(30px,8vw,76px);line-height:1;padding:12px 0;width:max-content}
+.f1{background:var(--y);color:#0b0b0b;transform:rotate(-3deg) translateX(var(--x1,0));margin-left:-10vw}
+.f2{color:var(--y);background:#141414;transform:rotate(-3deg) translateX(var(--x2,0));margin-left:-60vw;margin-top:6px}
+.faixa span{padding:0 .35em}
+.faixa span::after{content:"/";margin-left:.7em;opacity:.55}
+
+/* ===== Seções ===== */
+.sec{padding:48px 0}
+@media (min-width:880px){.sec{padding:80px 0}}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--y)}
+.h2{font-weight:900;text-transform:uppercase;letter-spacing:-.025em;line-height:.95;font-size:clamp(34px,9vw,72px);margin-top:10px}
+.h2 .o{color:var(--y)}
+.intro{color:var(--ink-2);font-size:17px;margin-top:14px;max-width:38em}
+
+/* ===== O que vai estar na Black ===== */
+.grade{display:grid;gap:14px;margin-top:28px}
+@media (min-width:640px){.grade{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1000px){.grade{grid-template-columns:repeat(4,1fr)}.grade .c-a{grid-column:span 2;grid-row:span 2}}
+.prod{position:relative;background:var(--s1);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s ease,border-color .25s ease}
+.prod:hover{transform:translateY(-4px);border-color:#4a4a4a}
+.prod .foto{background:#f0f0f0;aspect-ratio:4/3;display:grid;place-items:center;overflow:hidden;position:relative}
+.prod .foto img{width:100%;height:100%;object-fit:contain;padding:8px}
+.prod .foto.redonda img{object-fit:cover;padding:0;width:auto;height:86%;aspect-ratio:1;border-radius:50%;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+.c-a .foto{aspect-ratio:auto;flex:1;min-height:300px;background:#f2f2f2}
+.c-a .foto img{max-height:480px}
+.prod .corpo{padding:16px 18px 18px}
+.prod h3{font-weight:900;font-size:22px;letter-spacing:-.01em;text-transform:uppercase;line-height:1.05}
+.prod p{color:var(--ink-3);font-size:14px;margin-top:6px}
+.vai{position:absolute;top:12px;left:12px;z-index:2;background:#0b0b0b;color:var(--y);font-weight:900;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:7px 10px;border-radius:8px;border:1px solid var(--y)}
+.preco{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;padding-top:14px;border-top:1px dashed #333}
+.preco .hoje{font-size:13px;color:var(--ink-3);line-height:1.3}
+.preco .hoje s{position:relative;display:inline-block;text-decoration:none;color:var(--ink-2);font-weight:800;font-size:18px}
+.preco .hoje s::after{content:"";position:absolute;left:-2px;right:-2px;top:52%;height:3px;background:var(--y);transform-origin:left;border-radius:2px}
+.preco .black{text-align:right;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);line-height:1.1}
+.q{display:inline-block;font-size:46px;font-weight:900;color:var(--y);line-height:.9}
+.nota{color:var(--ink-3);font-size:13px;margin-top:16px;max-width:52em}
+
+/* ===== Por que entrar agora ===== */
+.passos{display:grid;gap:14px;margin-top:28px;counter-reset:p}
+@media (min-width:880px){.passos{grid-template-columns:repeat(3,1fr)}}
+.passo{background:var(--s1);border:1px solid var(--line);border-radius:20px;padding:22px;position:relative;overflow:hidden}
+.passo .n{font-weight:900;font-size:84px;line-height:.8;letter-spacing:-.05em;color:var(--y);opacity:.9}
+.passo h3{font-weight:900;font-size:22px;text-transform:uppercase;line-height:1.05;margin-top:14px}
+.passo p{color:var(--ink-2);margin-top:8px}
+.passo::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:100%;background:var(--y);transform-origin:left}
+
+/* ===== Cadastro ===== */
+.cad{display:grid;gap:22px;margin-top:28px}
+@media (min-width:880px){.cad{grid-template-columns:.9fr 1.1fr;align-items:start;gap:40px}}
+.cad-lado .big{font-weight:900;font-size:clamp(30px,7vw,52px);line-height:.95;text-transform:uppercase;letter-spacing:-.02em}
+.cad-lado .big b{color:var(--y)}
+.cad-lado ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px}
+.cad-lado li{display:flex;gap:10px;align-items:flex-start;color:var(--ink-2)}
+.cad-lado li::before{content:"";flex:0 0 18px;height:18px;margin-top:3px;border-radius:5px;background:var(--y) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='%230b0b0b' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
+.zap{margin-top:22px;background:var(--s1);border:1px solid var(--line);border-radius:18px;padding:18px}
+.zap p{color:var(--ink-2);font-size:15px}
+.zap .btn{margin-top:12px;width:100%}
+.card{background:var(--s1);border:1px solid var(--line);border-radius:20px;padding:22px;position:relative;transition:box-shadow .3s}
+@media (min-width:600px){.card{padding:30px}}
+.card:focus-within{box-shadow:0 0 0 2px var(--y),0 0 50px rgba(243,185,20,.18)}
+.card h2{font-size:24px;font-weight:900;text-transform:uppercase;line-height:1.05}
+.card .sub{color:var(--ink-3);margin-top:8px;font-size:15px}
 form{display:grid;gap:14px;margin-top:18px}
-label{display:grid;gap:6px;font-weight:600;font-size:15px}
-label .opt{color:var(--ink-3);font-weight:400}
-input,select{width:100%;font:inherit;color:var(--ink);background:var(--s2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-height:48px}
-input:focus,select:focus{border-color:var(--accent);outline:none}
-.check{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14px;color:var(--ink-2)}
-.check input{width:22px;height:22px;min-height:0;flex:0 0 22px;margin-top:2px;accent-color:var(--accent)}
+label{display:grid;gap:6px;font-weight:700;font-size:15px}
+input,select{width:100%;font:inherit;font-weight:500;color:var(--ink);background:var(--s2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-height:50px}
+input:focus,select:focus{border-color:var(--y);outline:none}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:500;font-size:14px;color:var(--ink-2)}
+.check input{width:22px;height:22px;min-height:0;flex:0 0 22px;margin-top:2px;accent-color:var(--y)}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-button{font:inherit;font-weight:800;font-size:17px;background:var(--accent);color:#0b0b0b;border:0;border-radius:12px;min-height:54px;cursor:pointer;letter-spacing:.02em}
-button:hover{filter:brightness(1.05)}
-button[disabled]{opacity:.6;cursor:progress}
+#btn{width:100%;min-height:58px;font-size:17px}
+#btn[disabled]{opacity:.6;cursor:progress}
 .erro{color:var(--warn);font-size:14px;min-height:1em}
+.fine{color:var(--ink-3);font-size:13px}
 .ok{display:none}
 .ok.show{display:block}
-.ok h2{color:var(--accent)}
+.ok h2{color:var(--y)}
 .ok ul{margin:14px 0 0;padding-left:20px;color:var(--ink-2);display:grid;gap:8px}
-.btn2{display:inline-flex;align-items:center;justify-content:center;margin-top:18px;min-height:50px;padding:0 18px;border-radius:12px;background:var(--accent);color:#0b0b0b;font-weight:800;text-decoration:none}
-.fine{color:var(--ink-3);font-size:13px;margin-top:14px}
-footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--ink-3);font-size:13px}
-/* ===== Movimento (Sr. Anderson 17/11: nada estático) ===== */
-.hero{position:relative}
-#ouro{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.85}
-header,main,footer{position:relative;z-index:1}
-h1 span{background:linear-gradient(90deg,#F3B914 0%,#fff3c4 45%,#F3B914 60%,#b8860b 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:brilho 3.2s ease-in-out infinite}
-@keyframes brilho{0%{background-position:100% 0}100%{background-position:-120% 0}}
-.tag{animation:pulso 2.4s ease-in-out infinite}
-@keyframes pulso{0%,100%{box-shadow:0 0 0 0 rgba(243,185,20,.55)}50%{box-shadow:0 0 0 10px rgba(243,185,20,0)}}
-.rev{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
-.rev.in{opacity:1;transform:none}
-.dores li.rev{transform:translateX(-22px)}.dores li.rev.in{transform:none}
-.cont{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
-.cont div{background:var(--s1);border:1px solid var(--line);border-radius:10px;min-width:64px;padding:8px 6px;text-align:center}
-.cont b{display:block;font-size:26px;line-height:1.1;color:var(--accent);font-variant-numeric:tabular-nums}
-.cont small{color:var(--ink-3);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
-.cont-tit{margin-top:22px;color:var(--ink-3);font-size:13px;text-transform:uppercase;letter-spacing:.08em}
-.midia{margin-top:22px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--s1);position:relative}
-.midia video{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
-.midia small{display:block;padding:8px 12px;color:var(--ink-3);font-size:13px}
-#btn{animation:chama 1.8s ease-in-out infinite}
-@keyframes chama{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
-.card{transition:box-shadow .3s}.card:focus-within{box-shadow:0 0 0 2px var(--accent),0 0 40px rgba(243,185,20,.18)}
-.fixo{position:fixed;left:0;right:0;bottom:0;z-index:5;padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom));background:rgba(11,11,11,.92);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .35s}
+.ok .btn{margin-top:18px}
+footer{border-top:1px solid var(--line);padding:22px 0 100px;color:var(--ink-3);font-size:13px}
+@media (min-width:880px){footer{padding-bottom:40px}}
+
+/* barra fixa no celular */
+.fixo{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:8px;padding:10px var(--g) calc(10px + env(safe-area-inset-bottom));background:rgba(11,11,11,.94);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .35s ease}
 .fixo.on{transform:none}
-.fixo a{display:flex;align-items:center;justify-content:center;min-height:50px;border-radius:12px;background:var(--accent);color:#0b0b0b;font-weight:800;text-decoration:none}
+.fixo .btn{min-height:50px;font-size:14px;padding:0 14px}
+.fixo .btn-y{flex:1}
+.fixo .btn-o{flex:0 0 54px;padding:0}
 @media (min-width:880px){.fixo{display:none}}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rev{opacity:1;transform:none}#ouro{display:none}}
+
+/* ===== Movimento (só com .anim: quem pede "reduzir movimento" vê tudo parado) ===== */
+.anim .tarja .trilho{animation:corre 28s linear infinite}
+@keyframes corre{to{transform:translateX(-50%)}}
+.anim .kicker i{animation:pulso 1.6s ease-out infinite}
+@keyframes pulso{to{box-shadow:0 0 0 10px rgba(243,185,20,0)}}
+.anim .fundo .gigante{animation:deriva 22s linear infinite alternate}
+@keyframes deriva{to{transform:translate(-45%,-50%)}}
+.anim .fundo .feixe{animation:feixe 5.5s ease-in-out 2.4s infinite}
+@keyframes feixe{0%{opacity:0;transform:rotate(18deg) translateX(-120%)}15%{opacity:1}55%{opacity:1}70%,100%{opacity:0;transform:rotate(18deg) translateX(560%)}}
+.anim .fundo .listras{animation:gira 30s linear infinite}
+@keyframes gira{to{transform:rotate(360deg)}}
+.anim .kin .w{opacity:0;animation:bate .55s cubic-bezier(.2,.9,.25,1.2) forwards}
+.anim .kin .w1{animation-delay:.1s}.anim .kin .w2{animation-delay:.5s}.anim .kin .w3{animation-delay:.9s}
+@keyframes bate{0%{opacity:0;transform:scale(2.3) translateY(-6%)}60%{opacity:1}100%{opacity:1;transform:none}}
+.anim .kin{animation:treme .32s ease 1.35s 1}
+@keyframes treme{20%{transform:translate(-4px,2px)}40%{transform:translate(4px,-2px)}60%{transform:translate(-3px,1px)}80%{transform:translate(2px,0)}}
+.anim .kin em::before{transform:scaleX(0);animation:passa .45s cubic-bezier(.7,0,.2,1) 1.2s forwards}
+@keyframes passa{to{transform:scaleX(1)}}
+.anim .kin em{color:var(--y);animation:vira 0s linear 1.45s forwards}
+@keyframes vira{to{color:#0b0b0b}}
+.anim .desc .l{opacity:0;transform:translateY(.6em) rotate(8deg);animation:sobe .5s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(1.5s + var(--i) * 35ms)}
+@keyframes sobe{to{opacity:1;transform:none}}
+.anim .ate{opacity:0;animation:aparece .4s ease 2.3s forwards}
+.anim .garimpo{opacity:0;animation:aparece .5s ease 2.1s forwards}
+@keyframes aparece{to{opacity:1}}
+.anim .selo{animation:carimbo .5s cubic-bezier(.2,.9,.3,1.4) 2.45s both,respira 2.6s ease-in-out 3.2s infinite}
+@keyframes carimbo{0%{opacity:0;transform:rotate(-5deg) scale(2.6)}100%{opacity:1;transform:rotate(-5deg) scale(1)}}
+@keyframes respira{50%{transform:rotate(-5deg) scale(1.05)}}
+.anim .rot ul{animation:roda 5s cubic-bezier(.7,0,.3,1) infinite}
+@keyframes roda{0%,45%{transform:translateY(0)}50%,95%{transform:translateY(-1.5em)}100%{transform:translateY(-3em)}}
+.anim .cont b.vira{animation:digito .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes digito{0%{transform:translateY(-55%);opacity:0}100%{transform:none;opacity:1}}
+.anim .btn-y::after{animation:brilho 3.2s ease-in-out 3s infinite}
+@keyframes brilho{0%{left:-60%;opacity:0}10%{opacity:1}35%,100%{left:130%;opacity:0}}
+.anim .hoje-msg{animation:respira2 1.4s ease-in-out infinite}
+@keyframes respira2{50%{transform:scale(1.03)}}
+.anim .rev{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.anim .rev.in{opacity:1;transform:none}
+.anim .prod.rev{transform:translateY(40px) scale(.97)}
+.anim .prod.rev.in{transform:none}
+.anim .prod.rev.in:hover{transform:translateY(-4px)}
+.anim .preco .hoje s::after{transform:scaleX(0);transition:transform .6s cubic-bezier(.7,0,.2,1) .5s}
+.anim .prod.in .preco .hoje s::after{transform:scaleX(1)}
+.anim .prod.in .q{animation:duvida 2.4s ease-in-out 1.1s infinite}
+@keyframes duvida{0%,100%{transform:rotate(0)}10%{transform:rotate(-14deg) scale(1.12)}20%{transform:rotate(10deg)}30%{transform:rotate(-6deg)}40%{transform:none}}
+.anim .prod .foto img{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.anim .prod:hover .foto img{transform:scale(1.05)}
+.anim .prod.in .vai{animation:carimbo2 .45s cubic-bezier(.2,.9,.3,1.4) .35s both}
+@keyframes carimbo2{0%{opacity:0;transform:scale(2) rotate(-8deg)}100%{opacity:1;transform:none}}
+.anim .passo::after{transform:scaleX(0);transition:transform .9s cubic-bezier(.7,0,.2,1) .3s}
+.anim .passo.in::after{transform:scaleX(1)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<canvas id="ouro" aria-hidden="true"></canvas>
-<header><div class="wrap"><div class="logo"><b>GOLD</b>DOG <span style="color:var(--ink-3);font-weight:500;letter-spacing:0">Shop</span></div></div></header>
-<main class="wrap">
-  <section class="hero">
-    <div>
-      <span class="tag">Lista GoldDog · 26/11</span>
-      <h1>Quanto ouro está indo embora <span>no seu rejeito?</span></h1>
-      <p class="lead">O garimpeiro sabe quanto pega. Quase ninguém sabe quanto perde. E a perda não aparece na bateia, aparece no fim do mês.</p>
-      <ul class="dores">
-        <li class="rev">O ouro fino que a água leva e ninguém vê.</li>
-        <li class="rev">O material que passa rápido demais porque a calha não dá conta do volume.</li>
-        <li class="rev">A despesca que come o dia inteiro e ainda deixa ouro para trás.</li>
-        <li class="rev">O mercúrio que não pode mais ser usado, e hoje nem quem tem licença consegue autorização.</li>
-        <li class="rev">A falta de gente de confiança para tocar a operação.</li>
-        <li class="rev">O dinheiro gasto em máquina que não foi feita para o seu material.</li>
-      </ul>
-      <!-- Vídeo real da dor (calha de madeira, rejeito, bateia; nunca a nossa máquina). Aparece sozinho quando o arquivo dor.mp4 aprovado pelo Sr. Anderson for colocado nesta pasta. -->
-      <figure class="midia rev" id="midia" hidden style="margin-left:0;margin-right:0">
-        <video id="vdor" src="dor.mp4" autoplay muted loop playsinline preload="metadata"></video>
-      </figure>
-      <p class="cont-tit rev">Faltam para o dia 26/11</p>
-      <div class="cont rev" id="cont" aria-live="off"><div><b id="cd">0</b><small>dias</small></div><div><b id="ch">00</b><small>horas</small></div><div><b id="cm">00</b><small>min</small></div><div><b id="cs">00</b><small>seg</small></div></div>
-      <p class="lead rev"><b>No dia 26/11 a GoldDog mostra o caminho para cada uma dessas dores</b>, com desconto em todos os setores, só nesse dia. Quem está na lista fica sabendo primeiro.</p>
-    </div>
+<div class="tarja" aria-hidden="true"><div class="trilho">
+  <span>A Black das Blacks na GoldDog</span><span>Só no dia 26/11</span><span>Descontos inacreditáveis</span><span>Desconto em todos os setores, itens selecionados com até 50%</span><span>Entre na lista</span>
+  <span>A Black das Blacks na GoldDog</span><span>Só no dia 26/11</span><span>Descontos inacreditáveis</span><span>Desconto em todos os setores, itens selecionados com até 50%</span><span>Entre na lista</span>
+</div></div>
+<header><div class="wrap">
+  <a class="logo" href="https://www.golddogshop.com.br" aria-label="GoldDog Shop, ir para a loja"><img src="assets/logo-golddog-shop.webp" width="360" height="100" alt="GoldDog Shop"></a>
+  <a class="hdr-cta" href="#cadastro">ENTRAR NA LISTA</a>
+</div></header>
 
-    <div class="card" id="cadastro">
-      <div id="formBox">
-        <h2>Entre na lista do dia 26/11</h2>
-        <p class="sub">Grátis, sem compromisso. Você ainda baixa na hora o Guia Rápido "Ouro para Iniciantes".</p>
-        <form id="f" novalidate>
-          <label><span>Seu nome</span>
-            <input name="nome" autocomplete="name" required maxlength="120">
-          </label>
-          <label><span>WhatsApp com DDD</span>
-            <input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(66) 99999-9999" required maxlength="20">
-          </label>
-          <label><span>Qual dessas dores é a sua?</span>
-            <select name="interesse">
-              <option value="">Escolha a que mais pesa</option>
-              <option>Perco ouro fino no rejeito</option>
-              <option>A calha não dá conta do volume</option>
-              <option>A despesca demora demais</option>
-              <option>Não posso mais usar mercúrio</option>
-              <option>Falta gente de confiança na operação</option>
-              <option>Não sei se a minha área vale a pena</option>
-              <option>Quero começar e não sei por onde</option>
-              <option>Outra dificuldade</option>
-            </select>
-          </label>
-          <div class="hp" aria-hidden="true"><label>Site <input name="site" tabindex="-1" autocomplete="off"></label></div>
-          <label class="check"><input type="checkbox" name="consentimento" value="sim" required>
-            <span id="consTxt">Aceito receber da GoldDog Shop, no WhatsApp, o aviso do dia 26/11, as condições desse dia e conteúdos sobre garimpo. Posso sair quando quiser, é só responder SAIR.</span></label>
-          <p class="erro" id="erro" role="alert"></p>
-          <button type="submit" id="btn">QUERO ENTRAR NA LISTA</button>
-          <p class="fine">Seus dados ficam só com a GoldDog Shop (CNPJ 67.765.666/0001-01) e servem para falar com você sobre o dia 26/11 e sobre garimpo. Não vendemos nem passamos para ninguém.</p>
-        </form>
+<main>
+  <section class="hero">
+    <div class="fundo" aria-hidden="true"><div class="gigante">BLACK BLACK</div><div class="feixe"></div><div class="listras"></div></div>
+    <div class="wrap">
+      <p class="kicker"><i></i>GoldDog Shop · quinta-feira, 26/11</p>
+      <h1 class="kin"><span class="w w1">A Black</span><span class="w w2">das Blacks</span><span class="w w3">na <em>GoldDog</em></span></h1>
+      <div class="linha2">
+        <div>
+          <p class="desc" id="desc">Descontos inacreditáveis</p>
+          <p class="garimpo">O cara do garimpo é você.</p>
+          <div class="ate"><small><span class="setores">Desconto em todos os setores,</span>itens selecionados com</small><span class="selo"><span>até</span><b id="pct">50%</b></span></div>
+          <div class="rot">Vão estar na Black: <span class="jan"><ul aria-hidden="true"><li>Carpetes Âncora</li><li>Bateias</li><li>Carpetes Âncora</li></ul><span class="sr">carpetes Âncora e bateias</span></span></div>
+        </div>
+        <div class="cont-box">
+          <p class="cont-tit" id="contTit">A Black é só no dia <b>26/11</b> · faltam</p>
+          <div class="cont" id="cont" aria-live="off"><div><b id="cd">0</b><small>dias</small></div><div><b id="ch">00</b><small>horas</small></div><div><b id="cm">00</b><small>min</small></div><div><b id="cs">00</b><small>seg</small></div></div>
+          <p class="hoje-msg" id="hojeMsg">A Black é hoje!</p>
+        </div>
       </div>
-      <div class="ok" id="ok" tabindex="-1">
-        <h2>Pronto, você está na lista!</h2>
-        <p class="sub">Obrigado pela confiança. Veja o que acontece agora:</p>
-        <ul>
-          <li>Seu Guia Rápido "Ouro para Iniciantes" já está liberado aqui embaixo.</li>
-          <li>No dia 26/11 a Gabi, da equipe GoldDog, te chama no WhatsApp e mostra o caminho para a sua dor.</li>
-          <li>Nesse dia tem desconto em todos os setores da GoldDog, só no dia 26/11.</li>
-          <li>Até lá, a gente posta todo dia sobre as dores do garimpo. Siga @golddogshop.</li>
-          <li>Salve o nosso número (19) 99723-6122 para a mensagem chegar certinho.</li>
-        </ul>
-        <a class="btn2" href="guia-rapido-ouro-para-iniciantes.pdf" download>BAIXAR O GUIA GRÁTIS (PDF)</a>
+      <div class="ctas">
+        <a class="btn btn-y" href="#cadastro">Garanta seu lugar na lista</a>
+        <a class="btn btn-o" href="https://wa.me/5519997236122?text=Quero%20a%20BLACK%20GOLDDOG%20(site%20black)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Quero a Black no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="faixas" id="faixas" aria-hidden="true">
+    <div class="faixa f1" id="f1"><span>Só no dia 26/11</span><span>A Black das Blacks</span><span>Só no dia 26/11</span><span>A Black das Blacks</span><span>Só no dia 26/11</span><span>A Black das Blacks</span></div>
+    <div class="faixa f2" id="f2"><span>Até 50% em itens selecionados</span><span>Descontos inacreditáveis</span><span>Até 50% em itens selecionados</span><span>Descontos inacreditáveis</span><span>Até 50% em itens selecionados</span></div>
+  </div>
+
+  <section class="sec" id="vai-ter">
+    <div class="wrap">
+      <p class="eyebrow rev">O que vai ter</p>
+      <h2 class="h2 rev">Vão estar <span class="o">na Black</span></h2>
+      <p class="intro rev">Itens selecionados da loja. Quanto cada um vai custar no dia, só quem estiver na lista fica sabendo primeiro.</p>
+      <div class="grade">
+        <article class="prod c-a rev">
+          <span class="vai">Vai estar na Black</span>
+          <div class="foto"><img src="assets/gd3030-max.webp" width="520" height="640" loading="lazy" decoding="async" alt="Concentradora GD3030 MAX, foto real da loja"></div>
+          <div class="corpo">
+            <h3>Concentradora GD3030 MAX</h3>
+            <p>Com 2 carpetes Âncora. Água e gravidade, sem energia e sem química.</p>
+            <div class="preco"><span class="hoje">Preço de hoje<br><s>R$ 6.940,00</s></span><span class="black">No dia 26/11<br><span class="q">?</span></span></div>
+          </div>
+        </article>
+        <article class="prod c-b rev">
+          <span class="vai">Vai estar na Black</span>
+          <div class="foto"><img src="assets/carpete-ancora-3090c.webp" width="480" height="480" loading="lazy" decoding="async" alt="Carpete Âncora Concentrador 3090C, foto real da loja"></div>
+          <div class="corpo">
+            <h3>Carpetes Âncora</h3>
+            <p>Foto: Carpete Âncora Concentrador 3090C.</p>
+            <div class="preco"><span class="hoje">Preço de hoje (3090C)<br><s>R$ 1.350,00</s></span><span class="black">No dia 26/11<br><span class="q">?</span></span></div>
+          </div>
+        </article>
+        <article class="prod c-c rev">
+          <span class="vai">Linha na Black</span>
+          <div class="foto" style="background:#fff"><img src="assets/bateia.webp" width="425" height="530" loading="lazy" decoding="async" alt="Bateia Turbo 12 polegadas, foto real da loja" style="object-fit:contain;object-position:right center;padding:0"></div>
+          <div class="corpo"><h3>Bateias</h3><p>Para testar o material e conferir o rejeito. Foto ilustrativa.</p></div>
+        </article>
+        <article class="prod c-d rev">
+          <span class="vai">Linha na Black</span>
+          <div class="foto"><img src="assets/gd3060-pro.webp" width="480" height="480" loading="lazy" decoding="async" alt="Concentradora GD3060 PRO, foto real da loja"></div>
+          <div class="corpo"><h3>Concentradoras</h3><p>Foto ilustrativa da linha (GD3060 PRO).</p></div>
+        </article>
+        <article class="prod c-e rev">
+          <span class="vai">Linha na Black</span>
+          <div class="foto"><img src="assets/gdt05-max.webp" width="480" height="480" loading="lazy" decoding="async" alt="Mini trommel GDT05 MAX, foto real da loja"></div>
+          <div class="corpo"><h3>Trommels</h3><p>Foto ilustrativa da linha (GDT05 MAX).</p></div>
+        </article>
+      </div>
+      <p class="nota rev">Itens selecionados: nem todo modelo entra. Os itens e as condições valem só no dia 26/11. Preços de hoje conferidos em golddogshop.com.br em 20/11/2026. Fotos reais da loja; cada equipamento é configurado para o material e a aplicação de quem compra.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="por-que" style="padding-top:0">
+    <div class="wrap">
+      <p class="eyebrow rev">Por que entrar agora</p>
+      <h2 class="h2 rev">Quem está na lista <span class="o">sai na frente</span></h2>
+      <div class="passos">
+        <div class="passo rev"><div class="n">01</div><h3>Cadastre-se hoje</h3><p>Nome e WhatsApp, leva menos de um minuto. Grátis e sem compromisso.</p></div>
+        <div class="passo rev"><div class="n">02</div><h3>A lista recebe as condições primeiro</h3><p>No dia 26/11, pela Gabi, da equipe GoldDog, no WhatsApp.</p></div>
+        <div class="passo rev"><div class="n">03</div><h3>Fique de olho no WhatsApp</h3><p>Salve o número (19) 99723-6122. É por ele que a Gabi, da equipe GoldDog, manda as condições da Black.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="lista" style="padding-top:0">
+    <div class="wrap">
+      <div class="cad">
+        <div class="cad-lado rev">
+          <p class="eyebrow">Lista da Black · 26/11</p>
+          <p class="big" style="margin-top:10px">Garanta o seu lugar <b>na lista da Black</b></p>
+          <ul>
+            <li>No dia 26/11 a lista recebe as condições primeiro, pela Gabi no WhatsApp.</li>
+            <li>O cadastro é grátis e sem compromisso.</li>
+            <li>Para sair da lista, é só pedir no WhatsApp.</li>
+          </ul>
+          <div class="zap">
+            <p>Prefere falar direto? Um toque e a mensagem já vai pronta para o nosso WhatsApp de vendas.</p>
+            <a class="btn btn-o" href="https://wa.me/5519997236122?text=Quero%20a%20BLACK%20GOLDDOG%20(site%20black)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Quero a Black no WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="card rev" id="cadastro">
+          <div id="formBox">
+            <h2>Entre na lista da Black</h2>
+            <p class="sub">Grátis e sem compromisso. Leva menos de um minuto.</p>
+            <form id="f" novalidate>
+              <label><span>Seu nome</span>
+                <input name="nome" autocomplete="name" required maxlength="120">
+              </label>
+              <label><span>WhatsApp com DDD</span>
+                <input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(66) 99999-9999" required maxlength="20">
+              </label>
+              <label><span>Qual dessas dores é a sua?</span>
+                <select name="interesse">
+                  <option value="">Escolha a que mais pesa</option>
+                  <option>Perco ouro fino no rejeito</option>
+                  <option>A concentradora não dá conta do volume</option>
+                  <option>A despesca demora demais</option>
+                  <option>Não posso mais usar mercúrio</option>
+                  <option>Falta gente de confiança na operação</option>
+                  <option>Não sei se a minha área vale a pena</option>
+                  <option>Quero começar e não sei por onde</option>
+                  <option>Outra dificuldade</option>
+                </select>
+              </label>
+              <div class="hp" aria-hidden="true"><label>Site <input name="site" tabindex="-1" autocomplete="off"></label></div>
+              <label class="check"><input type="checkbox" name="consentimento" value="sim" required>
+                <span id="consTxt">Aceito receber da GoldDog Shop, no WhatsApp, o aviso do dia 26/11, as condições desse dia e conteúdos sobre garimpo. Posso sair quando quiser, é só responder SAIR.</span></label>
+              <p class="erro" id="erro" role="alert"></p>
+              <button type="submit" id="btn" class="btn btn-y">QUERO ENTRAR NA LISTA</button>
+              <p class="fine">GoldDog Shop (CNPJ 67.765.666/0001-01). Usamos seus dados só para o que foi autorizado acima: a Black GoldDog e conteúdos sobre garimpo. Para sair da lista, é só pedir no WhatsApp. <a href="https://www.golddogshop.com.br/politica-de-privacidade/" target="_blank" rel="noopener">Política de privacidade</a>.</p>
+            </form>
+          </div>
+          <div class="ok" id="ok" tabindex="-1">
+            <h2>Pronto, seu nome está na lista!</h2>
+            <p class="sub">Obrigado pela confiança. Veja o que acontece agora:</p>
+            <ul>
+              <li>No dia 26/11 a Gabi, da equipe GoldDog, chama no WhatsApp com as condições da Black.</li>
+              <li>A Black das Blacks é só no dia 26/11: itens selecionados com até 50%.</li>
+              <li>Até lá, siga @golddogshop para não perder nada.</li>
+              <li>Salve o nosso número (19) 99723-6122 para a mensagem chegar certinho.</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 </main>
-<div class="fixo" id="fixo"><a href="#cadastro">QUERO ENTRAR NA LISTA DO DIA 26/11</a></div>
-<footer><div class="wrap">GoldDog Shop · CNPJ 67.765.666/0001-01 · <a href="https://www.golddogshop.com.br" style="color:inherit">golddogshop.com.br</a></div></footer>
+
+<div class="fixo" id="fixo">
+  <a class="btn btn-y" href="#cadastro">Entrar na lista da Black</a>
+  <a class="btn btn-o" href="https://wa.me/5519997236122?text=Quero%20a%20BLACK%20GOLDDOG%20(site%20black)" target="_blank" rel="noopener" aria-label="Quero a Black no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg></a>
+</div>
+<footer><div class="wrap">GoldDog Shop · CNPJ 67.765.666/0001-01 · <a href="https://www.golddogshop.com.br">golddogshop.com.br</a> · Black das Blacks só no dia 26/11/2026, itens selecionados.</div></footer>
+
 <script>
-// ===== Configuração =====
+// ===== Configuração (igual à v1: não mudar sem mudar o fluxo n8n) =====
 const ENDPOINT = 'https://salaexecutiva.app.n8n.cloud/webhook/bf2026-cadastro';
 const FASE = 'fase1-26nov';
+const TXT_BTN = 'QUERO ENTRAR NA LISTA';
 // =========================
 const qs = new URLSearchParams(location.search);
 const origem = (qs.get('o') || qs.get('utm_source') || 'direto').replace(/[^\w.-]/g, '').slice(0, 60);
@@ -186,7 +425,7 @@ f.addEventListener('submit', async (e) => {
   const wa = (d.get('whatsapp') || '').replace(/\D/g, '');
   if (!nome) { erro.textContent = 'Escreva o seu nome.'; f.nome.focus(); return; }
   if (wa.length < 10 || wa.length > 13) { erro.textContent = 'Confira o WhatsApp com DDD, por exemplo (66) 99999-9999.'; f.whatsapp.focus(); return; }
-  if (!f.consentimento.checked) { erro.textContent = 'Marque a caixinha para a gente poder te avisar.'; return; }
+  if (!f.consentimento.checked) { erro.textContent = 'Marque a caixinha para a gente poder avisar.'; return; }
   const body = new URLSearchParams();
   for (const [k, v] of d) body.append(k, v);
   body.set('origem', FASE + '|' + origem);
@@ -199,55 +438,78 @@ f.addEventListener('submit', async (e) => {
     const ok = document.getElementById('ok'); ok.classList.add('show'); ok.focus();
   } catch (err) {
     erro.textContent = 'Não conseguimos enviar agora. Tente de novo em instantes.';
-    btn.disabled = false; btn.textContent = 'QUERO ENTRAR NA LISTA';
+    btn.disabled = false; btn.textContent = TXT_BTN;
   }
 });
 
 // ===== Movimento =====
 (() => {
-  const calmo = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  // revelar ao rolar, um depois do outro
-  const els = [...document.querySelectorAll('.rev')];
-  const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 }) : null;
-  els.forEach((el, i) => { el.style.transitionDelay = (Math.min(i, 6) * 120) + 'ms'; io ? io.observe(el) : el.classList.add('in'); });
-  // vídeo da dor: só aparece se o arquivo existir
-  const v = document.getElementById('vdor'), m = document.getElementById('midia');
-  v.addEventListener('loadeddata', () => { m.hidden = false; requestAnimationFrame(() => m.classList.add('in')); });
-  v.addEventListener('error', () => m.remove());
-  // contagem até 26/11 00h de Brasília
-  const alvo = new Date('2026-11-26T00:00:00-03:00').getTime();
+  const anim = document.documentElement.classList.contains('anim');
+  const $ = id => document.getElementById(id);
+
+  // "DESCONTOS INACREDITÁVEIS" letra por letra (o texto continua inteiro para leitor de tela)
+  if (anim) {
+    const el = $('desc'), txt = el.textContent; let i = 0;
+    el.setAttribute('aria-label', txt);
+    el.innerHTML = txt.split(' ').map(w => '<span style="display:inline-block;white-space:nowrap" aria-hidden="true">' + [...w].map(ch => '<span class="l" style="--i:' + (i++) + '">' + ch + '</span>').join('') + '</span>').join(' ');
+  }
+
+  // revelar ao rolar, em sequência
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12, rootMargin: '0px 0px -6% 0px' }) : null;
+  let k = 0, ultimoPai = null;
+  document.querySelectorAll('.rev').forEach(el => {
+    if (el.parentElement !== ultimoPai) { k = 0; ultimoPai = el.parentElement; }
+    el.style.transitionDelay = (Math.min(k++, 5) * 110) + 'ms';
+    io ? io.observe(el) : el.classList.add('in');
+  });
+
+  // contagem até 26/11/2026 00:00 de Brasília; no dia: "A Black é hoje!"; depois: encerrada
+  const alvo = new Date('2026-11-26T00:00:00-03:00').getTime(), fim = alvo + 864e5;
   const p2 = n => String(n).padStart(2, '0');
-  const tick = () => { let t = Math.max(0, alvo - Date.now()) / 1000;
-    document.getElementById('cd').textContent = Math.floor(t / 86400); t %= 86400;
-    document.getElementById('ch').textContent = p2(Math.floor(t / 3600)); t %= 3600;
-    document.getElementById('cm').textContent = p2(Math.floor(t / 60));
-    document.getElementById('cs').textContent = p2(Math.floor(t % 60)); };
-  tick(); setInterval(tick, 1000);
-  // barra fixa no celular quando o formulário sai da tela
-  const fixo = document.getElementById('fixo'), card = document.getElementById('cadastro');
-  if (io) new IntersectionObserver(([e]) => fixo.classList.toggle('on', !e.isIntersecting && e.boundingClientRect.top > 0)).observe(card);
-  // pó de ouro descendo com a água: o ouro que vai embora
-  if (calmo) return;
-  const c = document.getElementById('ouro'), x = c.getContext('2d');
-  let W, H, ps = [];
-  const dpr = Math.min(2, devicePixelRatio || 1);
-  const size = () => { W = c.width = innerWidth * dpr; H = c.height = innerHeight * dpr; };
-  size(); addEventListener('resize', size);
-  const novo = (topo) => ({ x: Math.random() * W, y: topo ? -10 : Math.random() * H, r: (Math.random() * 1.8 + .6) * dpr, vy: (Math.random() * .6 + .25) * dpr, vx: (Math.random() - .5) * .3 * dpr, a: Math.random() * .6 + .25, f: Math.random() * 6.28 });
-  const N = innerWidth < 600 ? 45 : 90;
-  for (let i = 0; i < N; i++) ps.push(novo(false));
-  const loop = () => {
-    x.clearRect(0, 0, W, H);
-    for (const p of ps) {
-      p.y += p.vy; p.x += p.vx + Math.sin(p.f += .02) * .25 * dpr;
-      if (p.y > H + 10) Object.assign(p, novo(true));
-      const g = .55 + .45 * Math.sin(p.f * 3);
-      x.beginPath(); x.arc(p.x, p.y, p.r, 0, 6.283);
-      x.fillStyle = `rgba(243,185,20,${(p.a * g).toFixed(3)})`; x.fill();
+  const set = (id, v) => { const b = $(id); if (b.textContent !== v) { b.textContent = v; if (anim) { b.classList.remove('vira'); void b.offsetWidth; b.classList.add('vira'); } } };
+  const tick = () => {
+    const agora = Date.now();
+    if (agora >= alvo) {
+      const hoje = agora < fim;
+      document.body.classList.toggle('bf-hoje', hoje); document.body.classList.toggle('bf-fim', !hoje);
+      $('contTit').textContent = hoje ? 'Dia 26/11 · é agora' : 'Black das Blacks 2026';
+      $('hojeMsg').textContent = hoje ? 'A Black é hoje! Chame a Gabi no WhatsApp.' : 'A Black das Blacks de 2026 acabou. Entre na lista para a próxima.';
+      return;
     }
-    requestAnimationFrame(loop);
+    let t = (alvo - agora) / 1000;
+    set('cd', String(Math.floor(t / 86400))); t %= 86400;
+    set('ch', p2(Math.floor(t / 3600))); t %= 3600;
+    set('cm', p2(Math.floor(t / 60)));
+    set('cs', p2(Math.floor(t % 60)));
   };
-  loop();
+  tick(); setInterval(tick, 1000);
+
+  // selo "ATÉ 50%" conta de 0 a 50 quando bate
+  if (anim) { const p = $('pct'); let n = 0; p.textContent = '0%'; setTimeout(() => { const s = performance.now(); const go = t => { n = Math.min(50, Math.round(50 * Math.min(1, (t - s) / 700) ** .6)); p.textContent = n + '%'; if (n < 50) requestAnimationFrame(go); }; requestAnimationFrame(go); }, 2450); }
+
+  // barra fixa no celular depois que o topo sai da tela, some quando o formulário aparece
+  const fixo = $('fixo'), card = $('cadastro'), hero = document.querySelector('.hero');
+  if (io) {
+    let heroFora = false, cardVisto = false;
+    const upd = () => fixo.classList.toggle('on', heroFora && !cardVisto);
+    new IntersectionObserver(([e]) => { heroFora = !e.isIntersecting && e.boundingClientRect.top < 0; upd(); }).observe(hero);
+    new IntersectionObserver(([e]) => { cardVisto = e.isIntersecting; upd(); }).observe(card);
+  }
+
+  // faixas que correm com a rolagem
+  if (!anim) return;
+  const fx = $('faixas'), f1 = $('f1'), f2 = $('f2');
+  let pend = false;
+  const corre = () => {
+    pend = false;
+    const r = fx.getBoundingClientRect(), vh = innerHeight;
+    if (r.bottom < -100 || r.top > vh + 100) return;
+    const p = (vh - r.top) / (vh + r.height);
+    f1.style.setProperty('--x1', (-p * 30).toFixed(2) + 'vw');
+    f2.style.setProperty('--x2', (p * 30).toFixed(2) + 'vw');
+  };
+  addEventListener('scroll', () => { if (!pend) { pend = true; requestAnimationFrame(corre); } }, { passive: true });
+  corre();
 })();
 </script>
 </body>
