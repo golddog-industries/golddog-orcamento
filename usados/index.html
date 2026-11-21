@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seminovos e Usados · GoldDog Shop</title>
+<meta name="description" content="Trommels, concentradoras e equipamentos de garimpo seminovos e usados, da marca GoldDog e de parceiros. Fotos reais, estado contado sem rodeio e negociação pela GoldDog Shop.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0b0b0b">
+<meta property="og:title" content="Seminovos e Usados · GoldDog Shop">
+<meta property="og:description" content="Máquina boa, pronta pra trabalhar, por menos. Veja o que está disponível hoje.">
+<!--
+  Vitrine de seminovos e usados da GoldDog Shop. Anita (Marketing) + equipe Site, 21/11/2026.
+  Lê usados/estoque.json (fonte única; a Gabi lê o mesmo arquivo). Itens "exemplo": true só aparecem com ?previa=1.
+  Regras: a Shop só VENDE (nunca "fabricação"); "concentradora", nunca "calha"; fotos reais, nunca geradas por IA.
+  Para cadastrar um item: usados/LEIA-ME.md.
+-->
+<style>
+:root{--accent:#F3B914;--ink:#fff;--ink-2:#e4e4e4;--ink-3:#a8a8a8;--canvas:#0b0b0b;--s1:#141414;--s2:#1c1c1c;--line:#2e2e2e;--ok:#4cb782;--warn:#e2a23b;--off:#6b6b6b;
+--sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--r:14px;--gutter:16px}
+@media (min-width:600px){:root{--gutter:32px}}
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--canvas);-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{max-width:100%;display:block}
+h1,h2,h3,p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 var(--gutter)}
+header{padding:16px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(11,11,11,.92);backdrop-filter:blur(8px);z-index:5}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-weight:800;letter-spacing:.04em;font-size:20px;text-decoration:none}.logo b{color:var(--accent)}
+.logo span{color:var(--ink-3);font-weight:500;letter-spacing:0}
+.hdr-cta{font-size:14px;font-weight:700;color:#0b0b0b;background:var(--accent);padding:8px 14px;border-radius:999px;text-decoration:none;white-space:nowrap}
+.previa{background:#3a2c00;color:#ffd66b;font-size:14px;padding:10px 0;border-bottom:1px solid #6b5200}
+.hero{padding:36px 0 26px}
+.tag{display:inline-block;background:var(--accent);color:#0b0b0b;font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;border-radius:6px}
+h1{font-size:clamp(30px,6.4vw,52px);line-height:1.05;margin-top:14px;font-weight:800;text-wrap:balance;max-width:16em}
+h1 span{color:var(--accent)}
+.lead{color:var(--ink-2);font-size:18px;margin-top:14px;max-width:36em}
+.trust{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:18px;color:var(--ink-3);font-size:14px;padding:0;list-style:none}
+.trust li::before{content:"✓ ";color:var(--accent);font-weight:800}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:14px 0 18px;border-top:1px solid var(--line)}
+.chip{appearance:none;border:1px solid var(--line);background:var(--s1);color:var(--ink-2);font:inherit;font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:#0b0b0b;border-color:var(--ink)}
+.count{margin-left:auto;color:var(--ink-3);font-size:14px}
+.grid{display:grid;gap:18px;grid-template-columns:1fr;padding-bottom:12px}
+@media (min-width:700px){.grid{grid-template-columns:1fr 1fr}}
+@media (min-width:1040px){.grid{grid-template-columns:1fr 1fr 1fr}}
+.card{background:var(--s1);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;position:relative;opacity:0;transform:translateY(14px);animation:in .5s ease forwards}
+@keyframes in{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.card{animation:none;opacity:1;transform:none}}
+.card.vendido{filter:grayscale(.9);opacity:.75}
+.gal{position:relative;aspect-ratio:3/2;background:#000}
+.gal .track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;height:100%;scrollbar-width:none}
+.gal .track::-webkit-scrollbar{display:none}
+.gal img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;scroll-snap-align:start}
+.gal .dots{position:absolute;bottom:8px;left:0;right:0;display:flex;justify-content:center;gap:5px}
+.gal .dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.5)}
+.gal .dots i.on{background:#fff}
+.badges{position:absolute;top:10px;left:10px;display:flex;gap:6px;flex-wrap:wrap}
+.b{font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:5px 8px;border-radius:6px;background:rgba(0,0,0,.72);color:#fff}
+.b.st-disponivel{background:var(--ok);color:#06210f}
+.b.st-reservado{background:var(--warn);color:#2a1a00}
+.b.st-vendido{background:var(--off);color:#fff}
+.b.cond{background:var(--accent);color:#0b0b0b}
+.ex{position:absolute;top:10px;right:10px;font-size:11px;font-weight:800;padding:4px 7px;border-radius:6px;background:#ffd66b;color:#3a2c00}
+.body{padding:16px;display:flex;flex-direction:column;gap:12px;flex:1}
+.cod{font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+.card h3{font-size:19px;line-height:1.2;font-weight:800}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;margin:0;font-size:14px}
+.facts dt{color:var(--ink-3);font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.facts dd{margin:0;color:var(--ink-2)}
+.parc{font-size:13px;color:var(--ink-2);background:var(--s2);border-left:3px solid var(--accent);padding:8px 10px;border-radius:6px}
+.preco{font-size:26px;font-weight:800;margin-top:auto}
+.preco small{display:block;font-size:13px;font-weight:500;color:var(--ink-3)}
+.acts{display:flex;gap:8px}
+.btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center;font-weight:800;font-size:15px;padding:13px 12px;border-radius:10px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+.btn.wa{background:var(--accent);color:#0b0b0b}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);flex:0 0 auto;padding:13px 14px}
+.btn.off{background:var(--s2);color:var(--ink-3);pointer-events:none}
+details.more{border-top:1px solid var(--line);padding-top:10px;font-size:14px;color:var(--ink-2)}
+details.more summary{cursor:pointer;font-weight:700;color:var(--ink);list-style:none}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::after{content:" +";color:var(--accent)}
+details.more[open] summary::after{content:" –"}
+details.more p,details.more ul{margin:8px 0 0}
+details.more ul{padding-left:18px}
+.vazio{grid-column:1/-1;background:var(--s1);border:1px dashed var(--line);border-radius:var(--r);padding:28px;text-align:center;color:var(--ink-2)}
+.vazio .btn{max-width:320px;margin:16px auto 0}
+section.box{margin:34px 0;background:var(--s1);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+section.box h2{font-size:22px;font-weight:800}
+section.box ul{margin:12px 0 0;padding-left:18px;color:var(--ink-2)}
+section.box li{margin:4px 0}
+.two{display:grid;gap:18px}
+@media (min-width:800px){.two{grid-template-columns:1fr 1fr}}
+.vender{background:linear-gradient(135deg,#1b1503,#141414 60%);border-color:#4a3a06}
+.vender p{color:var(--ink-2);margin-top:8px}
+.vender .btn{margin-top:14px;max-width:340px}
+footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--ink-3);font-size:13px}
+.sticky-wa{position:fixed;right:16px;bottom:16px;z-index:6;width:56px;height:56px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.4)}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="logo" href="https://www.golddogshop.com.br"><b>GOLD</b>DOG <span>Shop</span></a><a class="hdr-cta" id="hdrWa" href="#">Falar com a Gabi</a></div></header>
+<div class="previa" id="previa" hidden><div class="wrap"><strong>PRÉVIA para aprovação.</strong> As fichas marcadas "EXEMPLO" são ilustrativas e não vão ao ar.</div></div>
+
+<main class="wrap">
+  <div class="hero">
+    <span class="tag">Seminovos e usados</span>
+    <h1>Máquina boa, <span>pronta pra trabalhar</span>, por menos.</h1>
+    <p class="lead">Trommels, concentradoras e equipamentos de garimpo seminovos e usados, da marca GoldDog e de parceiros. Foto real, estado contado sem rodeio e negociação pela GoldDog Shop.</p>
+    <ul class="trust">
+      <li>Fotos reais de cada unidade</li>
+      <li>Estado e uso informados</li>
+      <li>Atendimento pelo WhatsApp</li>
+      <li>Retirada nos CDs ou no local</li>
+    </ul>
+  </div>
+
+  <div class="bar" role="toolbar" aria-label="Filtrar equipamentos">
+    <button class="chip" data-f="todos" aria-pressed="true">Todos</button>
+    <button class="chip" data-f="trommel" aria-pressed="false">Trommels</button>
+    <button class="chip" data-f="concentradora" aria-pressed="false">Concentradoras</button>
+    <button class="chip" data-f="outros" aria-pressed="false">Outros</button>
+    <span class="count" id="count"></span>
+  </div>
+
+  <div class="grid" id="grid" aria-live="polite"></div>
+
+  <div class="two">
+    <section class="box" id="condicoes">
+      <h2>Como pagar</h2>
+      <ul id="pag"></ul>
+    </section>
+    <section class="box vender">
+      <h2>Tem um equipamento parado?</h2>
+      <p>Se o senhor tem trommel, concentradora ou outro equipamento de garimpo para vender, mande fotos e os dados pelo WhatsApp. A gente avalia e pode colocar na vitrine.</p>
+      <a class="btn wa" id="vendaWa" href="#">Quero anunciar o meu</a>
+    </section>
+  </div>
+</main>
+
+<footer><div class="wrap">GoldDog Shop · CNPJ 67.765.666/0001-01 · Centros de distribuição em Campinas/SP e Matupá/MT · <a href="https://www.golddogshop.com.br">golddogshop.com.br</a><br>Equipamentos de parceiros ficam no local do parceiro; a negociação é feita pela GoldDog Shop. Disponibilidade sujeita a confirmação no atendimento.</div></footer>
+
+<a class="sticky-wa" id="stickyWa" href="#" aria-label="Falar no WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg></a>
+
+<script>
+// ===== Configuração =====
+const WA = '5519997236122';          // WhatsApp 6122 (Gabi). Nunca o WhatsApp pessoal.
+const FONTE = 'estoque.json';
+// =========================
+const qs = new URLSearchParams(location.search);
+const PREVIA = qs.has('previa') || window.USADOS_PREVIA === true;
+const BASE = location.origin + location.pathname;
+const waLink = t => 'https://wa.me/' + WA + '?text=' + encodeURIComponent(t);
+const brl = n => n.toLocaleString('pt-BR', {style:'currency', currency:'BRL', maximumFractionDigits:0});
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const COND = {seminovo:'Seminovo', usado:'Usado', revisado:'Revisado'};
+const ST = {disponivel:'Disponível', reservado:'Reservado', vendido:'Vendido'};
+const ORDEM = {disponivel:0, reservado:1, vendido:2};
+
+document.getElementById('hdrWa').href = waLink('Olá, Gabi! Vim pela página de seminovos e usados da GoldDog Shop.');
+document.getElementById('stickyWa').href = document.getElementById('hdrWa').href;
+document.getElementById('vendaWa').href = waLink('Olá, Gabi! Tenho um equipamento de garimpo para vender e quero anunciar na vitrine de usados da GoldDog Shop.');
+if (PREVIA) document.getElementById('previa').hidden = false;
+
+let itens = [], filtro = 'todos';
+
+function card(it, i) {
+  const fotos = (it.fotos || []).filter(Boolean);
+  const titulo = esc(it.titulo);
+  const st = it.status || 'disponivel';
+  const preco = (typeof it.preco === 'number' && it.preco > 0)
+    ? brl(it.preco) + '<small>' + (it.preco_obs ? esc(it.preco_obs) : 'Retirada em ' + esc(it.local)) + '</small>'
+    : 'Sob consulta<small>' + (it.preco_obs && it.preco_obs !== 'Consultar' ? esc(it.preco_obs) : 'A Gabi passa o valor no WhatsApp') + '</small>';
+  const msg = st === 'reservado'
+    ? `Olá, Gabi! O equipamento ${it.codigo} (${it.titulo}) está reservado. Pode me avisar se ele liberar?`
+    : `Olá, Gabi! Tenho interesse no equipamento ${it.codigo}: ${it.titulo} (${COND[it.condicao] || ''}). ${BASE}#${it.codigo}`;
+  const btn = st === 'vendido'
+    ? '<span class="btn off">Vendido</span>'
+    : `<a class="btn wa" href="${waLink(msg)}" target="_blank" rel="noopener">${st === 'reservado' ? 'Me avise se liberar' : 'Quero este'}</a>`;
+  const acomp = (it.acompanha || []).length ? `<p><strong>Acompanha:</strong></p><ul>${it.acompanha.map(a => `<li>${esc(a)}</li>`).join('')}</ul>` : '';
+  return `<article class="card ${st}" id="${esc(it.codigo)}" style="animation-delay:${Math.min(i, 8) * 60}ms">
+    <div class="gal">
+      <div class="track">${fotos.length ? fotos.map((f, k) => `<img src="${esc(f)}" alt="${titulo}, foto ${k + 1}" loading="${i < 3 ? 'eager' : 'lazy'}">`).join('') : ''}</div>
+      ${fotos.length > 1 ? `<div class="dots">${fotos.map((_, k) => `<i class="${k ? '' : 'on'}"></i>`).join('')}</div>` : ''}
+      <div class="badges"><span class="b st-${st}">${ST[st]}</span><span class="b cond">${COND[it.condicao] || esc(it.condicao)}</span></div>
+      ${it.exemplo ? '<span class="ex">EXEMPLO</span>' : ''}
+    </div>
+    <div class="body">
+      <div class="cod">${esc(it.codigo)} · ${esc(it.marca)} ${esc(it.modelo)}</div>
+      <h3>${titulo}</h3>
+      <dl class="facts">
+        <div><dt>Ano</dt><dd>${esc(it.ano || '—')}</dd></div>
+        <div><dt>Uso</dt><dd>${esc(it.uso || '—')}</dd></div>
+        <div style="grid-column:1/-1"><dt>Onde está</dt><dd>${esc(it.local || '—')}</dd></div>
+      </dl>
+      ${it.origem === 'parceiro' ? '<div class="parc">Equipamento de parceiro, negociado pela GoldDog Shop.</div>' : ''}
+      <div class="preco">${preco}</div>
+      <div class="acts">${btn}</div>
+      <details class="more"><summary>Estado e detalhes</summary>
+        ${it.estado ? `<p>${esc(it.estado)}</p>` : ''}
+        ${it.revisao ? `<p><strong>Vistoria:</strong> ${esc(it.revisao)}</p>` : ''}
+        ${acomp}
+        ${it.garantia ? `<p><strong>Garantia:</strong> ${esc(it.garantia)}</p>` : '<p><strong>Garantia:</strong> condições informadas no atendimento.</p>'}
+        ${it.video ? `<p><a href="${esc(it.video)}" target="_blank" rel="noopener">Ver vídeo do equipamento</a></p>` : ''}
+      </details>
+    </div>
+  </article>`;
+}
+
+function render() {
+  const g = document.getElementById('grid');
+  const lista = itens
+    .filter(it => filtro === 'todos' || (filtro === 'outros' ? !['trommel', 'concentradora'].includes(it.categoria) : it.categoria === filtro))
+    .sort((a, b) => (ORDEM[a.status] ?? 9) - (ORDEM[b.status] ?? 9));
+  const disp = lista.filter(it => it.status === 'disponivel').length;
+  document.getElementById('count').textContent = disp + (disp === 1 ? ' disponível' : ' disponíveis');
+  g.innerHTML = lista.length ? lista.map(card).join('') : `<div class="vazio"><strong>Novas unidades chegando.</strong><br>Fale com a Gabi e diga qual equipamento o senhor procura. A gente avisa quando entrar.<a class="btn wa" href="${waLink('Olá, Gabi! Estou procurando um equipamento seminovo ou usado. Pode me avisar quando entrar?')}" target="_blank" rel="noopener">Me avise quando entrar</a></div>`;
+  g.querySelectorAll('.gal').forEach(gal => {
+    const tr = gal.querySelector('.track'), dots = gal.querySelectorAll('.dots i');
+    if (dots.length) tr.addEventListener('scroll', () => { const k = Math.round(tr.scrollLeft / tr.clientWidth); dots.forEach((d, j) => d.classList.toggle('on', j === k)); }, {passive: true});
+  });
+  if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
+}
+
+document.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => {
+  filtro = c.dataset.f;
+  document.querySelectorAll('.chip').forEach(x => x.setAttribute('aria-pressed', x === c));
+  render();
+}));
+
+function carregar(d) {
+  itens = (d.itens || []).filter(it => PREVIA || !it.exemplo);
+  document.getElementById('pag').innerHTML = (d.condicoes_pagamento || []).map(t => `<li>${esc(t)}</li>`).join('');
+  render();
+}
+if (window.USADOS_DATA) carregar(window.USADOS_DATA);
+else fetch(FONTE, {cache: 'no-cache'}).then(r => r.json()).then(carregar).catch(() => carregar({itens: []}));
+</script>
+</body>
+</html>
