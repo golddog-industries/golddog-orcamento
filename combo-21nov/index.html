@@ -433,7 +433,8 @@ footer{border-top:1px solid var(--line);padding:22px 0 110px;color:var(--ink-3);
 const CONFIG = {
   precoReferenciaGoldMoss: 165.00, // preço atual do GoldMoss 30x100 avulso na loja (referência, sem preço riscado nem %)
   precoCombo: 79.99,          // preço do combo (GoldMoss + resinado) em 21/11, decidido pelo Sr. Anderson em 20/11 14:30Z
-  checkoutUrl: 'https://www.golddogshop.com.br/comprar/502995761/', // Kit 30x100 (variante 502995761): põe no carrinho Nuvemshop. Vazio = botão desligado.
+  carrinho: { action: 'https://www.golddogshop.com.br/comprar/', addToCart: '128642538', quantidade: 1 }, // POST igual ao formulário da página do produto: põe o kit no carrinho Nuvemshop.
+  checkoutUrl: 'https://www.golddogshop.com.br/produtos/kit-carpete-vazado-goldmoss-30cm-x-1m-resinado-tela-expandida-3-16x50mmx100mm1/', // página do kit 128642538 (reserva se o POST não rodar). Vazio = botão desligado.
   estoqueEndpoint: 'https://salaexecutiva.app.n8n.cloud/webhook/golddog-estoque-oferta-21nov', // JSON {"estoque": N, "publicado": true}. Vazio ou erro = linha de estoque escondida.
   inicio: '2026-11-21T00:00:00-03:00',
   fim:    '2026-11-21T23:59:59-03:00'
@@ -456,6 +457,23 @@ const VIDEOS = [
   let publicado = null; // false = oferta tirada do ar pela loja
   const comprar = document.querySelectorAll('.js-comprar');
   const txtBase = 'Comprar o combo agora';
+
+  // Formulário escondido: o botão envia POST para /comprar/ (o link /comprar/<variante>/ dá 404 na loja).
+  const form = document.createElement('form');
+  form.method = 'post'; form.target = '_self'; form.hidden = true; form.id = 'formCarrinho';
+  const temPost = !!(CONFIG.carrinho && CONFIG.carrinho.action && CONFIG.carrinho.addToCart);
+  if (temPost) {
+    form.action = CONFIG.carrinho.action;
+    [['add_to_cart', CONFIG.carrinho.addToCart], ['quantity', CONFIG.carrinho.quantidade]].forEach(([n, v]) => {
+      const i = document.createElement('input'); i.type = 'hidden'; i.name = n; i.value = String(v); form.appendChild(i);
+    });
+    document.body.appendChild(form);
+  }
+  comprar.forEach(a => a.addEventListener('click', e => {
+    if (a.classList.contains('off') || !temPost) return;
+    e.preventDefault();
+    form.submit();
+  }));
 
   const setBtns = (ativo, rotulo) => comprar.forEach(a => {
     a.classList.toggle('off', !ativo);
